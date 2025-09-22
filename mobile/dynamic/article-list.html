@@ -1,0 +1,191 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="all-articles"
+    type="list"
+    link="article.bc"
+    propertyid="3088011,3088010,7244"
+    perpage="1"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="348x160"
+  />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="articles">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="[##cms.query.catid##]"
+    order="ord"
+  ></member>
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(لیست مقاله های مبین مسافر ملل)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50">
+    <basis core="call" file="header.inc" />
+    <main class="mb-11">
+      <basis core="list" datamembername="db.all-articles">
+        <face  filter="prp_3088011 is null">
+          <section
+            class="w-full flex relative bg-secondary-100 py-8 items-center justify-center mt-[72px]"
+          >
+            <a
+              href="@link"
+              class="px-4 group w-full lg:px-4 xl:!w-[1280px] flex-col-reverse xl:!px-0 flex gap-[34px]"
+            >
+              <div class="w-full flex flex-col gap-8 justify-center">
+                <h1 class="text-3xl font-bold Iran-sans text-secondary-950">
+                  @title
+                </h1>
+                <div class="Iran-sans line-clamp-3 text-[#57534D]">
+                  @prp_7244
+                </div>
+                <div
+                  class="flex items-center Iran-sans text-xs gap-2 !text-secondary-500"
+                >
+                  @date
+                  
+                </div>
+                <button
+                  class="h-10 w-[116px] group-hover:shadow-lg group-hover:bg-primary-900 bg-primary-800 rounded-lg flex justify-center items-center"
+                  type="button"
+                >
+                  <span class="font-DMedium pb-2 text-white">ادامه مطلب</span>
+                </button>
+              </div>
+              <div class="w-full">
+                <img
+                  loading="lazy"
+                  width="348"
+                  height="160"
+                  src="@00348X00160prp"
+                  alt="@title"
+                  class="w-full shadow2 h-[52] rounded-lg"
+                />
+              </div>
+            </a>
+          </section>
+        </face>
+        <face>
+          <section
+            class="w-full flex relative bg-secondary-100 py-8 items-center justify-center mt-[72px]"
+          >
+            <a
+              href="@link"
+              class="px-4 group w-full lg:px-4 xl:!w-[1280px] flex-col-reverse xl:!px-0 flex gap-[34px]"
+            >
+              <div class="w-full flex flex-col gap-8 justify-center">
+                <h1 class="text-3xl font-bold Iran-sans text-secondary-900">
+                  @title
+                </h1>
+                <div class="Iran-sans line-clamp-3 text-[#57534D]">
+                  @prp_7244
+                </div>
+                <div
+                  class="flex items-center Iran-sans text-xs gap-2 !text-secondary-500"
+                >
+                  @date
+                  <span class="pb-2">|</span>
+                  @prp_3088011 دقیقه زمان مطالعه
+                </div>
+                <button
+                  class="h-10 w-[116px] group-hover:shadow-lg group-hover:bg-primary-900 bg-primary-800 rounded-lg flex justify-center items-center"
+                  type="button"
+                >
+                  <span class="font-DMedium pb-2 text-white">ادامه مطلب</span>
+                </button>
+              </div>
+              <div class="w-full">
+                <img
+                  loading="lazy"
+                  width="348"
+                  height="160"
+                  src="@00348X00160prp"
+                  alt="@title"
+                  class="w-full shadow2 h-[52] rounded-lg"
+                />
+              </div>
+            </a>
+          </section>
+        </face>
+      </basis>
+
+      <section class="w-full flex relative justify-center mt-8">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <h2 class="text-sm font-Dbold">دسته بندی موضوعی:</h2>
+          <ul class="flex items-center clicker-list noafter gap-3">
+            <basis
+              core="tree"
+              datamembername="articles.cat"
+              idcol="catid"
+              parentidcol="parentid"
+              nullvalue="[##cms.query.catid##]"
+            >
+              <face>
+                <li
+                  data-id="@catid"
+                  class="pt-1 articles-li cursor-pointer pb-3 px-4 rounded-lg border border-secondary-100 text-secondary-950"
+                >
+                  @title
+                </li>
+              </face>
+            </basis>
+          </ul>
+          <div class="fetch-content-articles w-full">
+            <div class="w-full flex justify-center">
+              <span class="loader"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+  </body>
+
+  <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+  <basis core="call" file="footer.inc" />
+</html>

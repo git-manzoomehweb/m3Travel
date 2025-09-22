@@ -1,0 +1,45 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+  <member name="tour-list" type="list" link="tour.bc" propertyid="8181,8077,10000504,8076" typeid="159" size="296x160"
+    order="ord" />
+</basis>
+
+<basis core="print" datamembername="db.tour-list">
+  <else-layout>موردی یافت نشد !</else-layout>
+  <layout>@child</layout>
+  <face>
+    <a href="@link"
+      class="swiper-slide hover:!shadow-xl group !cursor-pointer !h-[336px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex justify-between flex-col">
+      <img loading="lazy" src="@00296X00160prp" width="296" height="160" alt="@title"
+        class="w-full h-[160px] rounded-lg" />
+      <p class="font-DSemiBold text-zinc-900 line-clamp-1">@title</p>
+      <div class="w-full grid grid-cols-3 mt-2 gap-2">
+        <div class="bg-secondary-50 h-[52px] rounded-lg w-full flex flex-col justify-center items-center">
+          <p class="text-xs text-secondary-500 pb-2">مدت زمان</p>
+          <p class="text-xs line-clamp-1 font-DMedium text-center">@prp_8076</p>
+        </div>
+        <div class="bg-secondary-50 h-[52px] rounded-lg w-full flex flex-col justify-center items-center">
+          <p class="text-xs text-secondary-500 pb-2">تاریخ</p>
+          <p class="text-xs line-clamp-1 font-DMedium text-center">@prp_8077</p>
+        </div>
+        <div class="bg-secondary-50 h-[52px] rounded-lg w-full flex flex-col justify-center items-center">
+          <p class="text-xs text-secondary-500 pb-2">ایرلاین</p>
+          <p class="text-xs line-clamp-1 font-DMedium text-center">
+            @prp_10000504
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2 mt-2 items-center">
+        <div class="w-[calc(100%-60px)] h-[52px] rounded-lg bg-secondary-50 flex justify-center items-center flex-col">
+          <p class="text-xs text-secondary-500 pb-2">شروع قیمت از</p>
+          <p class="text-xs line-clamp-1 font-DMedium text-center">@prp_8181</p>
+        </div>
+        <div class="w-[52px] h-[52px] flex justify-center items-center bg-primary-800 rounded-lg">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.33301 10.6666L1.66634 5.99992L6.33301 1.33325" stroke="#FCFAF6" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </a>
+  </face>
+</basis>

@@ -1,0 +1,78 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="flight-list"
+    type="list"
+    propertyid="3087999,3088000,3088003,3088004,3088001,3088002"
+    typeid="159"
+    order="ord"
+  />
+</basis>
+
+<basis core="print" datamembername="db.flight-list">
+  <else-layout>موردی یافت نشد !</else-layout>
+  <layout>@child</layout>
+  <face filter="prp_3088001 is null"></face>
+  <face filter="prp_3088002 is null"></face>
+  <face>
+    <div
+      class="swiper-slide hover:!shadow-xl group !cursor-pointer flight-card !h-[152px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col gap-3"
+    >
+      <div
+        class="w-full h-[76px] justify-center group-hover:shadow-lg flex flex-col bg-secondary-50 rounded-lg px-2"
+      >
+        <div class="flex items-center gap-1">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 1.5C11.0327 1.5 13.5 3.986 13.5 7.042C13.5 10.7987 9.196 14.5 8 14.5C6.804 14.5 2.5 10.7987 2.5 7.042C2.5 3.986 4.96733 1.5 8 1.5ZM8 2.5C5.51867 2.5 3.5 4.538 3.5 7.042C3.5 10.228 7.24933 13.332 8 13.4973C8.75067 13.3313 12.5 10.2273 12.5 7.042C12.5 4.538 10.4813 2.5 8 2.5ZM8.00067 4.83333C9.19533 4.83333 10.1673 5.80533 10.1673 7.00067C10.1673 8.19533 9.19533 9.16667 8.00067 9.16667C6.806 9.16667 5.834 8.19533 5.834 7.00067C5.834 5.80533 6.806 4.83333 8.00067 4.83333ZM8.00067 5.83333C7.35733 5.83333 6.834 6.35667 6.834 7.00067C6.834 7.644 7.35733 8.16667 8.00067 8.16667C8.644 8.16667 9.16733 7.644 9.16733 7.00067C9.16733 6.35667 8.644 5.83333 8.00067 5.83333Z"
+              fill="#7B5B28"
+            />
+          </svg>
+          <p class="mr-2 text-secondary-950 text-sm font-DSemiBold  ">
+            @prp_3088001
+          </p>
+          <p class="dep-name   text-xs text-secondary-700">@prp_3087999</p>
+          <p class="hidden dep-id">@prp_3088003</p>
+        </div>
+
+        <div class="w-[1px] h-[22px] bg-secondary-300 mr-[7px]"></div>
+        <div class="flex items-center gap-1">
+          <img
+            loading="lazy"
+            src="[##cms.cms.cdn##]/images/dep-ico.png"
+            width="26"
+            height="27"
+            alt="dep-icon"
+            class="w-[13px] h-[13px]"
+          />
+
+          <p class="mr-2 text-secondary-950 text-sm font-DSemiBold  ">
+            @prp_3088002
+          </p>
+          <p class="des-name   text-xs text-secondary-700">@prp_3088000</p>
+          <p class="hidden des-id">@prp_3088004</p>
+        </div>
+      </div>
+      <button
+        class="w-full rounded-lg flex justify-center items-center h-10 bg-primary-800 !text-white"
+        type="button"
+      >
+        <span class="pb-[9px] font-DMedium">رزرو بلیط</span>
+      </button>
+    </div>
+  </face>
+</basis>

@@ -1,0 +1,283 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  lid="1"
+  mid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member request="json-ld" type="scalar" name="json" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member propertyid="7249" name="view" type="view" />
+
+  <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="media"
+  lid="1"
+  name="db"
+  usedforid="[##cms.query.id##]"
+  sourcemid="article"
+>
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="213011"
+>
+  <member
+    name="news-list"
+    type="list"
+    typeid="159"
+    propertyid="7244"
+    order="ord"
+  />
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|( مقاله مبین مسافر ملل)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50">
+    <basis core="call" file="header.inc" />
+    <main class="mb-11">
+      <section class="w-full flex relative justify-center mt-20">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] mt-2 xl:!px-0 flex flex-col gap-5"
+        >
+          <ul class="flex gap-2 mt-2 items-center">
+            <li class="pb-2">
+              <a
+                href="/مجله-گردشگری"
+                class="text-sm Iran-sans hover:text-primary-600 text-[#79716B]"
+                >مجله</a
+              >
+            </li>
+            <li>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.3994 12.6666L5.59941 7.99992L10.3994 3.33325"
+                  stroke="#79716B"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </li>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=150">
+                <li class="text-sm Iran-sans text-secondary-950">@text</li>
+              </face>
+            </basis>
+          </ul>
+          <div
+            class="relative w-full overflow-hidden h-[256px] rounded-lg flex flex-col p-6 justify-end gap-4"
+          >
+            <div
+              class="flex flex-col p-2 gap-2 justify-end absolute z-[2] w-full h-[128px] bg-gradient-to-t bottom-0 left-0 from-[#000000CC]"
+            >
+              <div class="flex items-center gap-2">
+                <basis core="print" datamembername="db.view">
+                  <face filter="Question in('تگ')">
+                    <span
+                      class="py-1 text-xs px-3 Iran-sans rounded-lg bg-[#FAFAF9] border border-[#E7E5E4]"
+                    >
+                      @text
+                    </span>
+                  </face>
+                </basis>
+              </div>
+              <basis core="print" datamembername="db.view">
+                <face filter="TypeID=150">
+                  <h1 class="Iran-sans mt-4 text-[#FAFAF9] font-bold text-xl">
+                    @text
+                  </h1>
+                </face>
+              </basis>
+              <div
+                class="!text-xs !text-[#D6D3D1] pb-3 flex items-center gap-1"
+              >
+                <basis core="print" datamembername="db.view">
+                  <face filter="Question in('تاریخ انتشار')">
+                    <div class="flex items-center gap-1">
+                      @text
+                      <span>|</span>
+                    </div>
+                  </face>
+                </basis>
+
+                <basis core="print" datamembername="db.view">
+                  <face filter="Question in('زمان مطالعه')">
+                    @text دقیقه زمان مطالعه</face
+                  >
+                </basis>
+              </div>
+            </div>
+            <basis core="print" datamembername="db.gallery">
+              <face filter="RowNumber=1">
+                <img
+                  loading="lazy"
+                  src="@largeIMG"
+                  alt="@name"
+                  width="348"
+                  height="256"
+                  class="w-full z-0 absolute left-0 top-0 h-full object-cover rounded-lg"
+                />
+              </face>
+            </basis>
+          </div>
+          <div class="main-text-article w-full flex flex-col gap-4">
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=129">
+                <div class="text-secondary-800">@largetext</div>
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=250">
+                <div class="flex flex-col gap-4 w-full">
+                  <p class="font-DSemiBold text-secondary-950 text-lg">@text</p>
+                  <div class="Iran-sans text-secondary-900 text-base">
+                    @largetext
+                  </div>
+                </div>
+              </face>
+            </basis>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <img
+              loading="lazy"
+              src="[##cms.cms.cdn##]/images/Tag Icon.svg"
+              alt="tags"
+            />
+            <basis core="print" datamembername="db.view">
+              <face filter="Question in('تگ')">
+                <span
+                  class="py-1 px-3 Iran-sans rounded-lg bg-[#FAFAF9] border border-[#E7E5E4]"
+                  >@text
+                </span>
+              </face>
+            </basis>
+          </div>
+          <div class="flex items-center gap-3">
+            <p class="Iran-sans text-sm">اشتراک گذاری:</p>
+            <span
+              class="share-Articles hover:drop-shadow-xl hover:scale-125 cursor-pointer"
+            >
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/Share Icon Container.svg"
+                alt="share-icon"
+              />
+            </span>
+            <a
+              id="share-telegram"
+              class="hover:drop-shadow-xl hover:scale-125 cursor-pointer"
+            >
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/Telegram2.svg"
+                alt="telegram"
+              />
+            </a>
+            <a
+              id="share-facebook"
+              class="hover:drop-shadow-xl hover:scale-125 cursor-pointer"
+            >
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/Facebook2.svg"
+                alt="facebook"
+              />
+            </a>
+            <a
+              id="share-twitter"
+              class="hover:drop-shadow-xl hover:scale-125 cursor-pointer"
+            >
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/twitter-x-seeklogo.com-4 1.svg"
+                alt="twitter"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="alert hidden shadow-xl transition-all ease-in-out duration-300 top-[20%] right-[3%] fixed z-[40] w-72 items-center p-4 h-16 bg-secondary-200 rounded-lg border-2 border-secondary-300"
+        >
+          <span class="pb-2 font-DSemiBold">لینک در کلیپ بورد ذخیره شد ✅</span>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

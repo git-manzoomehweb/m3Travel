@@ -1,0 +1,209 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="2380427"
+>
+  <member name="flighthotel-faq" type="view" propertyid="7246" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="Popular-flights"
+>
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="215762"
+    order="ord"
+  ></member>
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(لیست هتل های مبین مسافر ملل)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50 flighthotel-landing">
+    <div class="header-container w-full">
+      <basis core="call" file="header.inc" />
+    </div>
+    <main class="mb-11">
+      <section class="w-full flex relative justify-center">
+        <img
+          loading="lazy"
+          src="[##cms.cms.cdn##]/images/flighthotel-bg.jpg"
+          alt="flighthotel-bg"
+          class="z-0 absolute object-cover w-full h-full top-0 left-0"
+        />
+        <span
+          class="z-[2] absolute left-0 bottom-[-2px] w-full h-full linear-gradient1"
+        ></span>
+        <span
+          class="bg-[#0000004D] z-[1] absolute left-0 top-0 w-full h-full"
+        ></span>
+        <div
+          class="px-4 z-20 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5 min-h-[702px] py-10"
+        >
+          <h1 class="text-white text-3xl font-Dbold txt-sh text-center">
+            پرواز + هتل
+          </h1>
+          <div class="search-box-container mobile-search-box w-full">
+            <div
+              id="search-box"
+              class="w-full flex justify-center min-h-[300px] items-center"
+            >
+              <span class="loader"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center w-full my-9">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <p class="text-secondary-950">
+            ام تری تراول امکان رزرو هتل‌ داخلی و خارجی را در کلاس جهانی فراهم
+            کرده است.  با مراجعه به وب‌سایت و اپلیکیشن ام تری تراول، می‌توانید
+            در کوتاه‌ترین زمان ممکن هتل مورد نظر خود را در هر نقطه از جهان رزرو
+            نمایید. برای این منظور به بخش رزرو هتل‌های داخلی یا خارجی مراجعه
+            کنید، نام شهر مقصد و تاریخ سفر خود را وارد کرده و دکمه جستجو را
+            بزنید. سپس، لیستی از هتل‌های موجود به همراه جزئیاتی شامل قیمت و
+            امکانات برای شما نمایش داده می‌شود که امکان مقایسه و انتخاب گزینه
+            مطلوب را برایتان فراهم می‌کند. علاوه بر این، با مطالعه نظرات مسافران
+            قبلی، می‌توانید بهترین گزینه را متناسب با نیاز و بودجه خود انتخاب و
+            هتل مورد نظر خود را رزرو کنید. در نهایت، واچر هتل به سرعت و به‌طور
+            آنی برای شما صادر خواهد شد. اگر به دنبال رزرو هتل‌های ارزان و مقایسه
+            آنلاین گزینه‌های مختلف هستید، ام تری تراول بهترین انتخاب برای شما
+            خواهد بود.
+          </p>
+        </div>
+      </section>
+
+      <section class="flex justify-center w-full mt-16">
+        <div class="px-4 w-full flex flex-col gap-3">
+          <div class="w-full flex justify-between">
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/pop-destination.svg"
+                alt="popular-destination"
+              />
+              <h2 class="font-Dbold text-zinc-900 pb-[10px]">مقاصد پرطرفدار</h2>
+            </div>
+          </div>
+          <ul
+            class="w-full border-b-2 border-secondary-100 clicker-list flex h-[38px] items-center gap-4"
+          >
+            <basis
+              core="tree"
+              datamembername="Popular-flights.cat"
+              idcol="catid"
+              parentidcol="parentid"
+              nullvalue="215762"
+            >
+              <face>
+                <li
+                  data-id="@catid"
+                  class="relative flighthotel-li text-sm w-[60px] justify-center hover:text-primary-800 cursor-pointer text-secondary-800 pb-[9px] flex h-[38px] items-center"
+                >
+                  @title
+                </li>
+              </face>
+            </basis>
+          </ul>
+          <div class="w-full fetch-content-flighthotel">
+            <div class="w-full flex justify-center">
+              <span class="loader"></span>
+            </div>
+          </div>
+         
+        </div>
+      </section>
+
+      <section class="flex justify-center w-full mt-24">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <p class="font-DSemiBold text-2xl pb-2">پرسش های شما</p>
+
+            <basis core="print" datamembername="db.flighthotel-faq">
+            <layout>
+              <div
+                class="common-qs-r flex flex-col divide-y w-full divide-secondary-100 border border-secondary-100 rounded-xl"
+              >
+                @child
+              </div>
+            </layout>
+            <face filter="TypeID=250">
+              <div class="box cursor-pointer py-3 px-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="w-4 h-4 relative flex justify-center items-center"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.3335 8H12.7616M8.04754 3.28595V12.714"
+                        stroke="#110D06"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <p class="qst text-secondary-950 font-DMedium pb-2">@text</p>
+                </div>
+                <div id="answer" class="text-secondary-900 hidden text-sm">
+                  @largetext
+                </div>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="Popular-flights"
+>
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="215762"
+    order="ord"
+  ></member>
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(لیست پرواز های مبین مسافر ملل)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50 flight-landing">
+    <basis core="call" file="header.inc" />
+    <main class="mb-11">
+      <section class="w-full flex relative justify-center mt-20">
+        <img
+          loading="lazy"
+          src="[##cms.cms.cdn##]/images/flight-bg.jpg"
+          alt="flight-bg"
+          class="z-0 absolute object-cover w-full h-full top-0 left-0"
+        />
+        <span
+          class="z-[2] absolute left-0 top-0 w-full h-full linear-gradient1"
+        ></span>
+        <span
+          class="bg-[#0000004D] z-[1] absolute left-0 top-0 w-full h-full"
+        ></span>
+        <div
+          class="px-4 z-20 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5 min-h-[400px] py-10"
+        >
+          <h1 class="text-white text-4xl font-Dbold txt-sh">بلیط هواپیما</h1>
+          <div class="search-box-container w-full">
+            <div
+              id="search-box"
+              class="w-full flex justify-center min-h-[300px] items-center"
+            >
+              <span class="loader"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center w-full my-9">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <p class="text-secondary-950">
+            خرید بلیط هواپیما در ام تری تراول با دسترسی به بیش از ۹۰۰ ایرلاین
+            داخلی و خارجی معتبر در سرتاسر جهان امکانپذیر است. شما می‌توانید با
+            مقایسه قیمت ایرلاین‌ها، به راحتی بلیط هواپیما ارزان را جستجو کرده و
+            خریداری کنید. کاربران می‌توانند علاوه بر خرید بلیط هواپیما خارجی و
+            داخلی، پروازهای داخلی کشورهای دیگر مانند تورنتو - ونکوور یا حتی
+            پروازهای بین شهری بین‌المللی مانند برلین - پاریس را نیز به صورت
+            ریالی خریداری کنند. ام تری تراول با ارائه ابزارهای متنوع، خرید بلیط
+            هواپیما با مناسب‌ترین قیمت را امکانپذیر کرده است. همچنین ام تری
+            تراول سایر خدمات سفر شامل رزرو هتل، ویزا، تور، بیمه مسافرتی و ... را
+            نیز از طریق وبسایت و اپلیکیشن خود به کاربران ارائه می‌دهد.
+          </p>
+        </div>
+      </section>
+
+      <section class="flex justify-center w-full mt-16">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-3"
+        >
+          <div class="w-full flex justify-between">
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/pop-flights.svg"
+                alt="popular-flights"
+              />
+              <h2 class="font-Dbold text-zinc-900 pb-[10px]">
+                پروازهای پرطرفدار
+              </h2>
+            </div>
+          </div>
+          <ul
+            class="w-full border-b-2 border-secondary-100 clicker-list flex h-[38px] items-center gap-4"
+          >
+            <basis
+              core="tree"
+              datamembername="Popular-flights.cat"
+              idcol="catid"
+              parentidcol="parentid"
+              nullvalue="215762"
+            >
+              <face>
+                <li
+                  data-id="@catid"
+                  class="relative flights-li text-sm w-[60px] justify-center hover:text-primary-800 cursor-pointer text-secondary-800 pb-[9px] flex h-[38px] items-center"
+                >
+                  @title
+                </li>
+              </face>
+            </basis>
+          </ul>
+          <div class="w-full fetch-content-flights">
+            <div class="w-full flex justify-center">
+              <span class="loader"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex justify-center w-full mt-24">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <p class="font-DSemiBold text-2xl pb-2">پرسش های شما</p>
+          <ul class="clicker-list faq-list flex gap-3 items-center">
+            <li
+              data-id="2380405"
+              class="faq-li px-3 hover:!bg-secondary-200 pb-3 cursor-pointer pt-1 rounded-[999px] bg-transparent border border-secondary-100 text-secondary-950"
+            >
+              پرواز داخلی
+            </li>
+            <li
+              data-id="2380406"
+              class="faq-li px-3 hover:!bg-secondary-200 pb-3 cursor-pointer pt-1 rounded-[999px] bg-transparent border border-secondary-100 text-secondary-950"
+            >
+              پرواز خارجی
+            </li>
+          </ul>
+          <div class="w-full fetch-content-faq">
+            <div class="w-full flex justify-center">
+              <span class="loader"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

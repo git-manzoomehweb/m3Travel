@@ -1,0 +1,48 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member name="faq-load" type="view" propertyid="7246" />
+</basis>
+
+<basis core="print" datamembername="db.faq-load">
+    <else-layout>پرسشی پیدا نشد !</else-layout>
+  <layout>
+    <div
+      class="common-qs flex flex-col divide-y w-full divide-secondary-100 border border-secondary-100 rounded-xl"
+    >
+      @child
+    </div>
+  </layout>
+  <face filter="TypeID=250">
+    <div class="box cursor-pointer py-3 px-4 flex flex-col gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-4 h-4 relative flex justify-center items-center"
+          ><svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.3335 8H12.7616M8.04754 3.28595V12.714"
+              stroke="#110D06"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <p class="qst text-secondary-950 font-DMedium pb-2">@text</p>
+      </div>
+      <div id="answer" class="text-secondary-900 hidden text-sm">
+        @largetext
+      </div>
+    </div>
+  </face>
+</basis>

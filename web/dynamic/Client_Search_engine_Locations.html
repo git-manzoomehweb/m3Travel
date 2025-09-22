@@ -1,0 +1,384 @@
+<basis core="group" if=" '[##cms.query.module-type##]' = 'flight'">
+  <div class="block mx-auto ul-list w-full">
+    <ul class="w-full float-right">
+      <li
+        class=" bg-bgColor-100 w-full rounded bg-secondary-100 text-secondary-900 text-base p-1 mb-1"
+      >
+        <span class="font-DMedium text-secondary-900 text-xs"
+          >مسیرهای پرتردد</span
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1203548"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تهران</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211084"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">اصفهان</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1173505"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">دبی</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1177676"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">استانبول</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211085"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تبریز</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1168092"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">آنتالیا</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</basis>
+<basis core="group" if=" '[##cms.query.module-type##]' = 'multi'">
+ <div class="block mx-auto ul-list w-full">
+    <ul class="w-full float-right">
+      <li
+        class=" bg-bgColor-100 w-full rounded bg-secondary-100 text-secondary-900 text-base p-1 mb-1"
+      >
+        <span class="font-DMedium text-secondary-900 text-xs"
+          >مسیرهای پرتردد</span
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1203548"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تهران</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211084"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">اصفهان</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1173505"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">دبی</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1177676"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">استانبول</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211085"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تبریز</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1168092"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">آنتالیا</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</basis>
+<basis core="group" if=" '[##cms.query.module-type##]' = 'hotel'">
+  <div class="block mx-auto ul-list w-full">
+    <ul class="w-full float-right">
+      <li
+        class=" bg-bgColor-100 w-full rounded bg-secondary-100 text-secondary-900 text-base p-1 mb-1"
+      >
+        <span class="font-DMedium text-secondary-900 text-xs"
+          >مسیرهای پرتردد</span
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1203548"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تهران</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211084"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">اصفهان</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1173505"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">دبی</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1177676"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">استانبول</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211085"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تبریز</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1168092"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">آنتالیا</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</basis>
+<basis core="group" if=" '[##cms.query.module-type##]' = 'flighthotel'">
+  <div class="block mx-auto ul-list w-full">
+    <ul class="w-full float-right">
+      <li
+        class=" bg-bgColor-100 w-full rounded bg-secondary-100 text-secondary-900 text-base p-1 mb-1"
+      >
+        <span class="font-DMedium text-secondary-900 text-xs"
+          >مسیرهای پرتردد</span
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1203548"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تهران</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211084"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">اصفهان</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1173505"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">دبی</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1177676"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">استانبول</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1211085"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">تبریز</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary w-full flex gap-2 items-center text-textColor p-1 text-sm"
+        onclick="SelectPlace(this)"
+        data-id="1168092"
+      >
+        <svg width="44" height="44"  >
+          <use xlink:href="images/sprite-icons.svg#engine-location-icon"></use>
+        </svg>
+        <div class="flex flex-col gap-3">
+          <span class="font-DMedium text-secondary-950">آنتالیا</span>
+          <span class="text-xs text-secondary-700">همه فرودگاه‌ها</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</basis>

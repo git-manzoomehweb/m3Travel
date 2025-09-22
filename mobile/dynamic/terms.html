@@ -1,0 +1,131 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="[##cms.query.id|(2380420)##]"
+>
+  <member name="terms" type="view" propertyid="7246" />
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(قوانین و مقررات مبین مسافر ملل)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50">
+    <basis core="call" file="header.inc" />
+    <main class="mb-11">
+      <section class="w-full flex relative justify-center mt-28">
+        <div
+          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
+        >
+          <ul class="flex gap-2 items-center">
+            <li class="pb-2">
+              <a
+                href="/Support-center"
+                class="text-sm hover:text-primary-600 text-secondary-500"
+                >پشتیبانی</a
+              >
+            </li>
+            <li>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.3994 12.6666L5.59941 7.99992L10.3994 3.33325"
+                  stroke="#C18F3E"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </li>
+            <li class="text-sm text-secondary-950 pb-2">قوانین و مقررات</li>
+          </ul>
+          <h1 class="font-DSemiBold text-2xl text-secondary-950">
+            قوانین و مقررات
+          </h1>
+
+          <basis core="print" datamembername="db.terms">
+            <else-layout>پرسشی پیدا نشد !</else-layout>
+            <layout>
+              <div
+                class="common-qs flex flex-col divide-y w-full divide-secondary-100 border border-secondary-100 rounded-xl"
+              >
+                @child
+              </div>
+            </layout>
+            <face filter="TypeID=250">
+              <div class="box cursor-pointer py-3 px-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="w-4 h-4 relative flex justify-center items-center"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.3335 8H12.7616M8.04754 3.28595V12.714"
+                        stroke="#110D06"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <p class="qst text-secondary-950 font-DMedium pb-2">@text</p>
+                </div>
+                <div id="answer" class="text-secondary-900 hidden text-sm">
+                  <ul class="w-full pr-5 flex list-disc flex-col gap-2">
+                    <li class="text-secondary-900 text-sm">@largetext</li>
+                  </ul>
+                </div>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

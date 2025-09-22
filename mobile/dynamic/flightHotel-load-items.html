@@ -1,0 +1,274 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="flight-list"
+    type="list"
+    propertyid="3087999,3088000,3088003,3088004,3088001,3088002"
+    typeid="159"
+    perpage="24"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="2"
+    parentname="flight-list"
+  />
+</basis>
+
+<div
+  data-catid="[##cms.query.catid##]"
+  class="flex flighthotel-container flex-col gap-5"
+>
+  <basis core="print" datamembername="db.flight-list">
+    <else-layout>موردی یافت نشد !</else-layout>
+    <layout> <div class="w-full grid grid-cols-1 gap-4">@child</div></layout>
+    <face filter="prp_3088001 is null"></face>
+    <face filter="prp_3088002 is null"></face>
+    <face>
+      <div
+        class="hover:!shadow-xl group !cursor-pointer flighthotel-card !h-[152px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col gap-3"
+      >
+        <div
+          class="w-full h-[76px] justify-center group-hover:shadow-lg flex flex-col bg-secondary-50 rounded-lg px-2"
+        >
+          <div class="flex items-center gap-1">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 1.5C11.0327 1.5 13.5 3.986 13.5 7.042C13.5 10.7987 9.196 14.5 8 14.5C6.804 14.5 2.5 10.7987 2.5 7.042C2.5 3.986 4.96733 1.5 8 1.5ZM8 2.5C5.51867 2.5 3.5 4.538 3.5 7.042C3.5 10.228 7.24933 13.332 8 13.4973C8.75067 13.3313 12.5 10.2273 12.5 7.042C12.5 4.538 10.4813 2.5 8 2.5ZM8.00067 4.83333C9.19533 4.83333 10.1673 5.80533 10.1673 7.00067C10.1673 8.19533 9.19533 9.16667 8.00067 9.16667C6.806 9.16667 5.834 8.19533 5.834 7.00067C5.834 5.80533 6.806 4.83333 8.00067 4.83333ZM8.00067 5.83333C7.35733 5.83333 6.834 6.35667 6.834 7.00067C6.834 7.644 7.35733 8.16667 8.00067 8.16667C8.644 8.16667 9.16733 7.644 9.16733 7.00067C9.16733 6.35667 8.644 5.83333 8.00067 5.83333Z"
+                fill="#7B5B28"
+              />
+            </svg>
+            <p class="mr-2 text-secondary-950 text-sm font-DSemiBold  ">
+              @prp_3088001
+            </p>
+            <p class="dep-name   text-xs text-secondary-700">@prp_3087999</p>
+            <p class="hidden dep-id">@prp_3088003</p>
+          </div>
+
+          <div class="w-[1px] h-[22px] bg-secondary-300 mr-[7px]"></div>
+          <div class="flex items-center gap-1">
+            <img
+              loading="lazy"
+              src="[##cms.cms.cdn##]/images/dep-ico.png"
+              width="26"
+              height="27"
+              alt="dep-icon"
+              class="w-[13px] h-[13px]"
+            />
+
+            <p class="mr-2 text-secondary-950 text-sm font-DSemiBold  ">
+              @prp_3088002
+            </p>
+            <p class="des-name   text-xs text-secondary-700">@prp_3088000</p>
+            <p class="hidden des-id">@prp_3088004</p>
+          </div>
+        </div>
+        <button
+          class="w-full rounded-lg flex justify-center items-center h-10 bg-primary-800 !text-white"
+          type="button"
+        >
+          <span class="pb-[9px] font-DMedium">رزرو بلیط</span>
+        </button>
+      </div>
+    </face>
+  </basis>
+  <div
+    id="paging"
+    class="flex cats-paging-load items-center justify-center gap-2 mt-20"
+  >
+    <ul
+      class="flex w-full justify-center items-center gap-3 cd-pagination no-space dir-ltr"
+      id="wibpaging"
+    >
+      <basis core="print" datamembername="db.paging">
+        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+          <li
+            class="w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg page-no prev-page"
+          >
+            <span
+              class="w-full h-full flex justify-center items-center Iran-sans"
+              aria-label="angle-left"
+              onclick="FetchPageNumPrev('@page')"
+            >
+              بعدی
+            </span>
+          </li>
+        </face>
+        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+          <li
+            class="page-no prev-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
+          >
+            <span
+              class="w-full h-full flex justify-center items-center Iran-sans"
+              aria-label="angle-left"
+              onclick="FetchPageNumPrev('@page')"
+            >
+              بعدی</span
+            >
+          </li>
+        </face>
+      </basis>
+      <basis core="print" datamembername="db.paging">
+        <face
+          filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')"
+        >
+          <li
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
+          >
+            <span
+              class="page-number w-full h-full flex justify-center items-center Iran-sans"
+              data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')"
+              >@page</span
+            >
+          </li>
+        </face>
+        <face
+          filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')"
+        >
+          <li
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
+          >
+            <span
+              class="page-number w-full h-full flex justify-center items-center Iran-sans"
+              data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')"
+              >@page</span
+            >
+          </li>
+        </face>
+        <face
+          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') "
+        >
+          <li
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
+          >
+            <span
+              class="Iran-sans page-number w-full h-full flex justify-center items-center"
+              data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')"
+              >@page</span
+            >
+          </li>
+        </face>
+        <face
+          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') "
+        >
+          <li
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
+          >
+            <span
+              class="Iran-sans page-number w-full h-full flex justify-center items-center"
+              data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')"
+              >@page</span
+            >
+          </li>
+        </face>
+      </basis>
+      <basis core="print" datamembername="db.paging">
+        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+          <li
+            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
+          >
+            <span
+              class="w-full h-full flex justify-center items-center Iran-sans"
+              aria-label="angle-right"
+              onclick="FetchPageNumNext('@page')"
+              >قبلی</span
+            >
+          </li>
+        </face>
+        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+          <li
+            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
+          >
+            <span
+              class="w-full h-full flex justify-center items-center Iran-sans"
+              aria-label="angle-right"
+              onclick="FetchPageNumNext('@page')"
+              >قبلی</span
+            >
+          </li>
+        </face>
+      </basis>
+    </ul>
+  </div>
+  <script>
+    var tCard = document.querySelectorAll(".flighthotel-card");
+    tCard.forEach((card) => {
+      card.addEventListener("click", () => {
+        const dpCity = card.querySelector(".dep-name").innerText,
+          dpId = card.querySelector(".dep-id").innerText,
+          rtCity = card.querySelector(".des-name").innerText,
+          rtId = card.querySelector(".des-id").innerText;
+        const liBtns = document.querySelectorAll(".reservation-item li");
+        liBtns.forEach((li) => {
+          if (!li.classList.contains("flighthotel-btn")) {
+            li.classList.remove("active-module");
+          } else {
+            li.classList.add("active-module");
+          }
+        });
+        document.querySelector("#r-hotel").classList.add("hidden");
+        document.querySelector("#r-flight").classList.remove("hidden");
+        document.querySelector("#r-tour").classList.add("hidden");
+        document.querySelector("#r-cip").classList.add("hidden");
+        document.querySelector(
+          ".r-flighthotel .flight-routes .departure.text-value"
+        ).value = dpCity;
+        document.querySelector(
+          ".r-flighthotel .flight-routes .locationId.from"
+        ).value = dpId;
+        document.querySelector(
+          ".r-flighthotel .flight-routes .destination.text-value"
+        ).value = rtCity;
+        document.querySelector(
+          ".r-flighthotel .flight-routes .locationId.to"
+        ).value = rtId;
+        var main = document.querySelector("main");
+        main &&
+          window.scrollTo({ top: main.offsetTop + 10, behavior: "smooth" });
+      });
+    });
+
+    var FetchPageNumPrev = async (e) => {
+        let t = document.querySelector(".flighthotel-container"),
+          n = t.getAttribute("data-catid"),
+          o = await fetch(`/flightHotel-load-items.bc?catid=${n}&pagenum=${e}`),
+          r = await o.text();
+        t.innerHTML = r;
+      },
+      FetchPageNumNext = async (e) => {
+        let t = document.querySelector(".flighthotel-container"),
+          n = t.getAttribute("data-catid"),
+          o = await fetch(`/flightHotel-load-items.bc?catid=${n}&pagenum=${e}`),
+          r = await o.text();
+        t.innerHTML = r;
+      },
+      FetchWithPageNum = async (e) => {
+        let t = document.querySelector(".flighthotel-container"),
+          n = t.getAttribute("data-catid"),
+          o = await fetch(`/flightHotel-load-items.bc?catid=${n}&pagenum=${e}`),
+          r = await o.text();
+        t.innerHTML = r;
+      };
+  </script>
+</div>

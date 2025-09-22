@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری مبین مسافر ملل)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden bg-secondary-50">
+    <basis core="call" file="header.inc" />
+    <main class="flex justify-center items-center my-28 flex-col gap-3">
+      <img
+        src="[##cms.cms.cdn##]/images/500.svg"
+        alt="500"
+        width="244"
+        height="158"
+     
+      />
+      <h1 class="mt-8 font-DMedium text-zinc-900">   ارتباط با سرور با مشکل مواجه شده است </h1>
+      <a
+        href="/"
+        class="w-[221px] hover:bg-secondary-100 hover:border hover:border-secondary-200 mt-8 h-12 flex justify-center items-center bg-secondary-100 rounded-lg"
+        >
+        <span class="pb-2">بازگشت به صفحه اصلی</span></a
+      >
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

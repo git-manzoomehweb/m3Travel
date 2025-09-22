@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a,
+button,
+li,
+path,
+svg,
+span {
+  transition: all 0.25s ease-in-out !important;
+}
+@font-face {
+  font-family: "Iran-sans";
+  font-weight: 200;
+  font-style: normal;
+  src: url("./fonts/IRANSansWeb\(FaNum\).ttf");
+}
+.Iran-sans {
+  font-family: "Iran-sans";
+}
+
+@font-face {
+  font-family: "DiodrumArabic-ExtraLight";
+  font-weight: 200;
+  font-style: normal;
+  src: url("./fonts/DiodrumArabic.Extralight.ttf");
+}
+.font-DExtraLight {
+  font-family: "DiodrumArabic-ExtraLight" !important;
+}
+@font-face {
+  font-family: "DiodrumArabic-light";
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/DiodrumArabic.Light.ttf");
+}
+.font-DLight {
+  font-family: "DiodrumArabic-light" !important;
+}
+@font-face {
+  font-family: "DiodrumArabic-regular";
+  font-weight: 500;
+  font-style: normal;
+  src: url("./fonts/DiodrumArabic.Regular.ttf");
+}
+.font-DRegular {
+  font-family: "DiodrumArabic-regular" !important;
+}
+@font-face {
+  font-family: "DiodrumArabic-Medium";
+  font-weight: 500;
+  font-style: normal;
+  src: url("./fonts/Diodrum ArabicMedium.ttf");
+}
+.font-DMedium {
+  font-family: "DiodrumArabic-Medium" !important;
+}
+.hover-medium:hover {
+  font-family: "DiodrumArabic-Medium" !important;
+}
+@font-face {
+  font-family: "DiodrumArabic-Semibold";
+  font-weight: 600;
+  font-style: normal;
+  src: url("./fonts/DiodrumArabic.Semibold.ttf");
+}
+.font-DSemiBold {
+  font-family: "DiodrumArabic-Semibold" !important;
+}
+@font-face {
+  font-family: "DiodrumArabic-bold";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/DiodrumArabic.Bold.ttf");
+}
+.font-Dbold {
+  font-family: "DiodrumArabic-bold" !important;
+}
+html,
+* {
+  font-family: "DiodrumArabic-regular", sans-serif;
+}
+:root {
+  --primary: #14405b;
+  --secondary: #c18f3e;
+  --primary-50: #ecf5fb;
+  --primary-100: #c6e1f3;
+  --primary-200: #a0cdea;
+  --primary-300: #7ab9e2;
+  --primary-400: #54a6da;
+  --primary-500: #2e92d1;
+  --primary-600: #2577ab;
+  --primary-700: #1d5d85;
+  --primary-800: #14405b;
+  --primary-900: #0c2839;
+  --primary-950: #040d13;
+
+  --secondary-950: #110d06;
+  --secondary-900: #342711;
+  --secondary-800: #57411c;
+  --secondary-700: #7b5b28;
+  --secondary-600: #9e7533;
+  --secondary-500: #c18f3e;
+  --secondary-400: #d4b37c;
+  --secondary-300: #e5d1b0;
+  --secondary-200: #f1e6d3;
+  --secondary-100: #f6f0e5;
+  --secondary-50: #fcfaf6;
+
+  --zinc-950: #09090b;
+  --zinc-900: #1c1917;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-600: #52525b;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --zinc-100: #f4f4f5;
+  --zinc-50: #fafafa;
+}
+.linear-gradient1 {
+  background: linear-gradient(
+    180deg,
+    rgba(252, 250, 246, 0.05) 50%,
+    #fcfaf6 100%
+  );
+}
+.txt-sh {
+  text-shadow: -3px 7px 5px #0000004d;
+}
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--primary-800) !important;
+}
+ul.clicker-list.faq-list li:hover {
+  background-color: var(--secondary-200) !important;
+}
+.noafter li::after {
+  display: none !important;
+}
+ul.clicker-list.noafter li.active {
+  background-color: var(--primary-800) !important;
+  font-family: "DiodrumArabic-Semibold" !important;
+  color: white !important;
+}
+.desktop-filter ul.clicker-list li::after {
+  display: none !important;
+}
+.desktop-filter ul.clicker-list li.active {
+  font-family: "DiodrumArabic-Medium" !important;
+  color: var(--primary-900) !important;
+}
+ul.clicker-list.faq-list li.active {
+  background-color: var(--primary-800) !important;
+  color: #fff !important;
+  border: 1px solid var(--primary-800) !important;
+}
+ul.clicker-list.faq-list li::after {
+  display: none !important;
+}
+ul.clicker-list li.active::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--primary-800) !important;
+}
+@media not all and (min-width: 1024px) {
+  ul.clicker-list li.active::after {
+    bottom: -2px !important;
+    height: 4px !important;
+  }
+}
+ul.clicker-list li.active {
+  color: var(--primary-800) !important;
+  background-color: transparent !important;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: var(--secondary) var(--secondary) transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent var(--primary) var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: var(--secondary) var(--secondary) transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.swiper [aria-disabled="true"] {
+  display: none !important;
+}
+.shadow1 {
+  box-shadow: 0px 1px 2px 0px #0000000d;
+}
+.common-qs .box.active #answer {
+  display: flex !important;
+}
+.common-qs .box.active .qst {
+  color: var(--primary-800) !important;
+}
+.common-qs .box.active span svg {
+  transform: scale(0);
+}
+.common-qs .box.active span::after {
+  content: "";
+  width: 95% !important;
+  border-radius: 55px;
+  height: 1.62px !important;
+  background-color: var(--primary-800);
+  display: flex;
+  position: absolute;
+  animation: fadeSpan 0.25s linear;
+}
+@keyframes fadeSpan {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.shadow2 {
+  box-shadow: 0px 1px 6px -1px #00000005;
+}
+a:hover .backdrop-blur-sm {
+  animation: darkFlash 0.6s ease;
+}
+@keyframes darkFlash {
+  0% {
+    filter: brightness(30%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+.alert.active {
+  display: flex !important;
+ }
+ 
