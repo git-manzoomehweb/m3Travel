@@ -1435,7 +1435,7 @@ ul.FlightClass {
   border-radius: 4px !important;
   background-color: var(--secondary-100) !important;
 }
-#search-box input,
+ 
 .day.empty_day,
 .month_name {
   background-color: transparent !important;
@@ -1837,11 +1837,11 @@ ul.FlightClass {
   border: 1px solid var(--secondary-200) !important;
   border-radius: 8px !important;
 }
+.selectLocation {margin-top: 10px;clear: both;}
+.selectLocation:first-child {margin-top: 0;}
 .selectLocation span {
   width: 100%;
   border-radius: 8px !important;
-  padding-top: 0.3rem !important;
-  padding-bottom: 0.25rem !important;
   color: var(--secondary-950) !important;
 }
 #r-cip .flighttype-field,
@@ -2604,3 +2604,5 @@ body.tour .tour-bg {
 .w3206 {
   width: 320.61px !important;
 }
+
+
