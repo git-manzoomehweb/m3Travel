@@ -392,3 +392,27 @@ html {
 .currency-selected::before {
   font-weight: 900 !important;
 }
+
+.airline-logo {
+  display: flex;
+  justify-content: center;
+  margin-right: 6px;
+}
+.section-input_2 input[type="checkbox"] {
+  border: 1px solid var(--primary) !important;
+}
+.section-input_2::before {
+  position: absolute;
+  content: "";
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 0;
+  opacity: 1;
+  border-radius: 3px;
+  right: 0;
+  border: 1px solid var(--primary) !important;
+}

@@ -1435,7 +1435,7 @@ ul.FlightClass {
   border-radius: 4px !important;
   background-color: var(--secondary-100) !important;
 }
- 
+
 .day.empty_day,
 .month_name {
   background-color: transparent !important;
@@ -1837,8 +1837,13 @@ ul.FlightClass {
   border: 1px solid var(--secondary-200) !important;
   border-radius: 8px !important;
 }
-.selectLocation {margin-top: 10px;clear: both;}
-.selectLocation:first-child {margin-top: 0;}
+.selectLocation {
+  margin-top: 10px;
+  clear: both;
+}
+.selectLocation:first-child {
+  margin-top: 0;
+}
 .selectLocation span {
   width: 100%;
   border-radius: 8px !important;
@@ -1976,7 +1981,21 @@ ul.FlightClass {
   box-shadow: 0 1px 2px 0 #0000000f, 0 1px 3px 0 #0000001a;
   border-radius: 8px;
 }
+.passengerbox ul input {
+  background-color: transparent !important;
+}
 @media (min-width: 1024px) {
+  #search-box .r-hotel:not(.hidden),
+  #search-box .r-flighthotel:not(.hidden),
+  #search-box .r-tour:not(.hidden),
+  #search-box .r-cip:not(.hidden),
+  #search-box .r-insurance:not(.hidden) {
+    min-height: 124px !important;
+    display: inline-flex !important;
+    flex-direction: column;
+    width: 100%;
+    justify-content: end;
+  }
   #search-box #r-insurance .departure-route {
     width: 45% !important;
   }
@@ -2111,7 +2130,7 @@ ul.FlightClass {
   }
   #r-flighthotel .flightclass-field {
     position: absolute !important;
-    top: -85px !important;
+    top: -47px !important;
     left: 0;
     width: 160px !important;
   }
@@ -2175,6 +2194,12 @@ ul.FlightClass {
   white-space: nowrap !important;
 }
 @media not all and (min-width: 1024px) {
+  body:has(.Basis_Calendar_Box.Selected_Basis_Calendar_Box)
+    a.hero-banner
+    .z-20 {
+    z-index: 0 !important;
+  }
+
   #r-flight .FlightClass-text,
   #r-flighthotel .FlightClass-text {
     transform: translateY(5px) !important;
@@ -2306,7 +2331,7 @@ ul.FlightClass {
     padding-top: 40px !important;
   }
   #r-flight form {
-    margin-top: 58px;
+    margin-top: 78px;
   }
   #r-flight .flightclass-field {
     position: absolute;
@@ -2604,5 +2629,3 @@ body.tour .tour-bg {
 .w3206 {
   width: 320.61px !important;
 }
-
-
