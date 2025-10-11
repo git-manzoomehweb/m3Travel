@@ -571,7 +571,7 @@ const headerMenu = document.querySelector(".header-menu");
 const headerMenuClose = document.querySelector(".header-menu-close");
 const bars3 = document.querySelector(".bars3");
 
-if (window.innerWidth >= 1024) {
+if (window.innerWidth >= 1034) {
   headerMenuClose.addEventListener("click", function () {
     headerMenu.style.visibility = "hidden";
     headerMenu.style.opacity = "0";

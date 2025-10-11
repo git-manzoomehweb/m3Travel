@@ -1,265 +1,139 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="hotel-list"
-    type="list"
-    link="hotel.bc"
-    propertyid="3088005"
-    typeid="159"
-    perpage="24"
-    pageno="[##cms.query.pagenum|(1)##]"
-    size="264x160"
-    order="ord"
-  />
-  <member
-    name="paging"
-    type="list"
-    request="paging"
-    count="2"
-    parentname="hotel-list"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+  <member name="hotel-list" type="list" link="hotel.bc" propertyid="3088005" typeid="159" perpage="24"
+    pageno="[##cms.query.pagenum|(1)##]" size="264x160" order="ord" />
+  <member name="paging" type="list" request="paging" count="2" parentname="hotel-list" />
 </basis>
-<div
-  data-catid="[##cms.query.catid##]"
-  class="flex w-full flex-col hotel-container"
->
+<div data-catid="[##cms.query.catid##]" class="flex w-full flex-col hotel-container">
   <basis core="print" datamembername="db.hotel-list">
     <else-layout>موردی یافت نشد !</else-layout>
     <layout>
       <div class="w-full grid grid-cols-4 gap-3">@child</div>
     </layout>
     <face filter="link is null">
-      <a
-        href="/hotel.bc?id=@id"
-        class="swiper-slide hover:!shadow-xl group !cursor-pointer !h-[248px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col justify-between"
-      >
-        <img
-          loading="lazy"
-          width="264"
-          height="160"
-          src="@00264X00160prp"
-          alt="@title"
-          class="w-full h-[160px] rounded-lg"
-        />
+      <a href="/hotel.bc?id=@id"
+        class="swiper-slide hover:!shadow-xl group !cursor-pointer !h-[248px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col justify-between">
+        <img loading="lazy" width="264" height="160" src="@00264X00160prp" alt="@title"
+          class="w-full h-[160px] rounded-lg" />
         <p class="font-DSemiBold text-zinc-900 pb-[10px] line-clamp-1">
           @title
         </p>
         <div class="flex w-full justify-between items-center">
           <div class="flex items-center gap-2">
-            <img
-              loading="lazy"
-              src="[##cms.cms.cdn##]/images/hotel-star.svg"
-              alt="star"
-            />
-            <span class="pb-[10px]">@prp_3088005</span>
+            <img loading="lazy" width="100" src="[##cms.cms.cdn##]/_images/@prp_3088005star.png"
+              alt="@prp_3088005star" />
+            <!-- <span class="pb-[10px]">@prp_3088005</span> -->
           </div>
-          <span
-            class="w-6 h-6 rounded-lg flex justify-center items-center group-hover:bg-secondary-200"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.333 12.6666L5.66634 7.99992L10.333 3.33325"
-                stroke="#C18F3E"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+          <span class="w-6 h-6 rounded-lg flex justify-center items-center group-hover:bg-secondary-200">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.333 12.6666L5.66634 7.99992L10.333 3.33325" stroke="#C18F3E" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
         </div>
       </a>
     </face>
     <face>
-      <a
-        href="@link"
-        class="swiper-slide hover:!shadow-xl group !cursor-pointer !h-[248px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col justify-between"
-      >
-        <img
-          loading="lazy"
-          width="264"
-          height="160"
-          src="@00264X00160prp"
-          alt="@title"
-          class="w-full h-[160px] rounded-lg"
-        />
+      <a href="@link"
+        class="swiper-slide hover:!shadow-xl group !cursor-pointer !h-[248px] w-full bg-secondary-100 border border-secondary-200 rounded-xl p-3 hover:border-secondary-100 !flex flex-col justify-between">
+        <img loading="lazy" width="264" height="160" src="@00264X00160prp" alt="@title"
+          class="w-full h-[160px] rounded-lg" />
         <p class="font-DSemiBold text-zinc-900 pb-[10px] line-clamp-1">
           @title
         </p>
         <div class="flex w-full justify-between items-center">
           <div class="flex items-center gap-2">
-            <img
-              loading="lazy"
-              src="[##cms.cms.cdn##]/images/hotel-star.svg"
-              alt="star"
-            />
-            <span class="pb-[10px]">@prp_3088005</span>
+            <img loading="lazy" width="100" src="[##cms.cms.cdn##]/_images/@prp_3088005star.png"
+              alt="@prp_3088005star" />
+            <!-- <span class="pb-[10px]">@prp_3088005</span> -->
           </div>
-          <span
-            class="w-6 h-6 rounded-lg flex justify-center items-center group-hover:bg-secondary-200"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.333 12.6666L5.66634 7.99992L10.333 3.33325"
-                stroke="#C18F3E"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+          <span class="w-6 h-6 rounded-lg flex justify-center items-center group-hover:bg-secondary-200">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.333 12.6666L5.66634 7.99992L10.333 3.33325" stroke="#C18F3E" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
         </div>
       </a>
     </face>
   </basis>
-  <div
-    id="paging"
-    class="flex cats-paging-load items-center justify-center gap-2 mt-20"
-  >
-    <ul
-      class="flex w-full justify-center items-center gap-3 cd-pagination no-space dir-ltr"
-      id="wibpaging"
-    >
+  <div id="paging" class="flex cats-paging-load items-center justify-center gap-2 mt-20">
+    <ul class="flex w-full justify-center items-center gap-3 cd-pagination no-space dir-ltr" id="wibpaging">
       <basis core="print" datamembername="db.paging">
         <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
           <li
-            class="w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg page-no prev-page"
-          >
-            <span
-              class="w-full h-full flex justify-center items-center Iran-sans"
-              aria-label="angle-left"
-              onclick="FetchPageNumPrev('@page')"
-            >
+            class="w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg page-no prev-page">
+            <span class="w-full h-full flex justify-center items-center Iran-sans" aria-label="angle-left"
+              onclick="FetchPageNumPrev('@page')">
               بعدی
             </span>
           </li>
         </face>
         <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
           <li
-            class="page-no prev-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
-          >
-            <span
-              class="w-full h-full flex justify-center items-center Iran-sans"
-              aria-label="angle-left"
-              onclick="FetchPageNumPrev('@page')"
-            >
-              بعدی</span
-            >
+            class="page-no prev-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg">
+            <span class="w-full h-full flex justify-center items-center Iran-sans" aria-label="angle-left"
+              onclick="FetchPageNumPrev('@page')">
+              بعدی</span>
           </li>
         </face>
       </basis>
       <basis core="print" datamembername="db.paging">
-        <face
-          filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')"
-        >
+        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
           <li
-            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
-          >
-            <span
-              class="page-number w-full h-full flex justify-center items-center Iran-sans"
-              data-pagenum="@page"
-              onclick="FetchWithPageNum('@page')"
-              >@page</span
-            >
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg">
+            <span class="page-number w-full h-full flex justify-center items-center Iran-sans" data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')">@page</span>
+          </li>
+        </face>
+        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+          <li
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg">
+            <span class="page-number w-full h-full flex justify-center items-center Iran-sans" data-pagenum="@page"
+              onclick="FetchWithPageNum('@page')">@page</span>
           </li>
         </face>
         <face
-          filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')"
-        >
+          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
           <li
-            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
-          >
-            <span
-              class="page-number w-full h-full flex justify-center items-center Iran-sans"
-              data-pagenum="@page"
-              onclick="FetchWithPageNum('@page')"
-              >@page</span
-            >
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg">
+            <span class="Iran-sans page-number" data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
           </li>
         </face>
         <face
-          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') "
-        >
+          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
           <li
-            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
-          >
-            <span
-              class="Iran-sans page-number w-full h-full flex justify-center items-center"
-              data-pagenum="@page"
-              onclick="FetchWithPageNum('@page')"
-              >@page</span
-            >
-          </li>
-        </face>
-        <face
-          filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') "
-        >
-          <li
-            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg"
-          >
-            <span
-              class="Iran-sans page-number w-full h-full flex justify-center items-center"
-              data-pagenum="@page"
-              onclick="FetchWithPageNum('@page')"
-              >@page</span
-            >
+            class="page-no w-[32px] hover:bg-primary-100 Iran-sans h-[32px] cursor-pointer flex justify-center items-center bg-secondary-100 text-secondary-950 rounded-lg">
+            <span class="Iran-sans page-number" data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
           </li>
         </face>
       </basis>
       <basis core="print" datamembername="db.paging">
         <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
           <li
-            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
-          >
-            <span
-              class="w-full h-full flex justify-center items-center Iran-sans"
-              aria-label="angle-right"
-              onclick="FetchPageNumNext('@page')"
-              >قبلی</span
-            >
+            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg">
+            <span class="w-full h-full flex justify-center items-center Iran-sans" aria-label="angle-right"
+              onclick="FetchPageNumNext('@page')">قبلی</span>
           </li>
         </face>
         <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
           <li
-            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg"
-          >
-            <span
-              class="w-full h-full flex justify-center items-center Iran-sans"
-              aria-label="angle-right"
-              onclick="FetchPageNumNext('@page')"
-              >قبلی</span
-            >
+            class="page-no next-page w-[58px] hover:bg-secondary-800 h-[32px] cursor-pointer flex justify-center items-center text-white bg-primary-800 rounded-lg">
+            <span class="w-full h-full flex justify-center items-center Iran-sans" aria-label="angle-right"
+              onclick="FetchPageNumNext('@page')">قبلی</span>
           </li>
         </face>
       </basis>
     </ul>
   </div>
   <script>
-   
+
     var FetchPageNumPrev = async (e) => {
-        let t = document.querySelector(".hotel-container"),
-          n = t.getAttribute("data-catid"),
-          o = await fetch(`/hotelList-load-items.bc?catid=${n}&pagenum=${e}`),
-          r = await o.text();
-        t.innerHTML = r;
-      },
+      let t = document.querySelector(".hotel-container"),
+        n = t.getAttribute("data-catid"),
+        o = await fetch(`/hotelList-load-items.bc?catid=${n}&pagenum=${e}`),
+        r = await o.text();
+      t.innerHTML = r;
+    },
       FetchPageNumNext = async (e) => {
         let t = document.querySelector(".hotel-container"),
           n = t.getAttribute("data-catid"),

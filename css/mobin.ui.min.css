@@ -1971,12 +1971,7 @@ ul.FlightClass {
 .tour-landing #r-tour {
   display: unset !important;
 }
-.cip-landing .text-4xl.font-Dbold.txt-sh,
-.flighthotel-landing .text-4xl.font-Dbold.txt-sh,
-.hotel-landing .text-4xl.font-Dbold.txt-sh,
-.tour-landing .text-4xl.font-Dbold.txt-sh {
-  transform: translateY(77px);
-}
+
 .exchangeRoute:hover svg {
   box-shadow: 0 1px 2px 0 #0000000f, 0 1px 3px 0 #0000001a;
   border-radius: 8px;
@@ -1984,9 +1979,14 @@ ul.FlightClass {
 .passengerbox ul input {
   background-color: transparent !important;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
+  .cip-landing .text-4xl.font-Dbold.txt-sh,
+  .flighthotel-landing .text-4xl.font-Dbold.txt-sh,
+  .hotel-landing .text-4xl.font-Dbold.txt-sh,
+  .tour-landing .text-4xl.font-Dbold.txt-sh {
+    transform: translateY(77px);
+  }
   #search-box .r-hotel:not(.hidden),
-  #search-box .r-flighthotel:not(.hidden),
   #search-box .r-tour:not(.hidden),
   #search-box .r-cip:not(.hidden),
   #search-box .r-insurance:not(.hidden) {
@@ -1994,7 +1994,7 @@ ul.FlightClass {
     display: inline-flex !important;
     flex-direction: column;
     width: 100%;
-    justify-content: end;
+    /* justify-content: end; */
   }
   #search-box #r-insurance .departure-route {
     width: 45% !important;
@@ -2193,13 +2193,33 @@ ul.FlightClass {
 .flighttype-items li span {
   white-space: nowrap !important;
 }
-@media not all and (min-width: 1024px) {
-  body:has(.Basis_Calendar_Box.Selected_Basis_Calendar_Box)
-    a.hero-banner
-    .z-20 {
+@media (max-width: 1024px) {
+  .btnstyle span:not(.hasNot-login-icon) {
+    display: none !important;
+  }
+}
+@media not all and (min-width: 1000px) {
+  #r-flight .flightclass-field {
+    position: absolute;
+    top: 240px !important;
+    right: 0;
+  }
+}
+
+@media not all and (min-width: 1124px) {
+  #r-flight .flightclass-field {
+    position: absolute;
+    top: 60px;
+    right: 0;
+  }
+  body:has(.Basis_Calendar_Box.Selected_Basis_Calendar_Box) a.hero-banner .z-20,
+  body:has(.fixed-searchList) a.hero-banner .z-20,
+  body:has(.fixed-passengerbox) a.hero-banner .z-20 {
     z-index: 0 !important;
   }
-
+  body:has(.fixed-passengerbox.hidden) a.hero-banner .z-20 {
+    z-index: 20 !important;
+  }
   #r-flight .FlightClass-text,
   #r-flighthotel .FlightClass-text {
     transform: translateY(5px) !important;
@@ -2333,11 +2353,7 @@ ul.FlightClass {
   #r-flight form {
     margin-top: 78px;
   }
-  #r-flight .flightclass-field {
-    position: absolute;
-    top: 240px;
-    right: 0;
-  }
+
   .h-set-all.banner-homepage {
     background-position: center;
     background-size: cover;
@@ -2628,4 +2644,78 @@ body.tour .tour-bg {
 
 .w3206 {
   width: 320.61px !important;
+}
+
+.departure.text-value,
+.destination.text-value {
+  font-weight: bold !important;
+}
+.departure.text-value::placeholder,
+.destination.text-value::placeholder {
+  font-weight: normal !important;
+}
+.unvisible {
+  display: none;
+}
+.payment-container input {
+  background-color: var(--secondary-50) !important;
+  border: 1px solid var(--secondary-300) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  color: var(--secondary-700) !important;
+  box-shadow: none !important;
+  height: 48px !important;
+}
+.payment-container input:focus {
+  border: 1px solid var(--primary-800) !important;
+}
+.payment-container .unit {
+  width: 45px !important;
+}
+.payment-container .price {
+  width: calc(100% - 70px) !important;
+}
+.payment-container [data-bc-question] {
+  display: flex !important;
+  align-items: center !important;
+}
+@media not all and (min-width: 900px) {
+  .payment-container [data-bc-question] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .payment__container .btn-item {
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+  .payment__container li:has(.btn-item) {
+    width: 100% !important;
+  }
+}
+.payment__container .invoice-content {
+  background: transparent;
+  border-radius: 1rem;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+}
+.payment__container .flex-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-50);
+  border: 1px solid var(--secondary-300) !important;
+  padding: 0.7em;
+  border-radius: 1em;
+}
+.payment__container .btn-item {
+  padding: 0.25rem;
+  padding-bottom: 8px !important;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
 }

@@ -1,122 +1,327 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="1"
-  usedforid="2380428"
->
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2380428">
   <member typeid="159" propertyid="7249" name="cip-first-content" type="view" />
 </basis>
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="1"
-  usedforid="2380429"
->
-  <member
-    typeid="159"
-    propertyid="7249"
-    name="cip-second-content"
-    type="view"
-  />
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2380429">
+  <member typeid="159" propertyid="7249" name="cip-second-content" type="view" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="1"
-  usedforid="2380423"
->
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2380423">
   <member name="faq" type="view" propertyid="7246" />
 </basis>
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>[##cms.seo.title|( خدمات cip مبین مسافر ملل)##]</title>
-    <meta
-      name="description"
-      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]"
-    />
-    <basis
-      core="dbsource"
-      source="hosting"
-      name="tag"
-      urlid="[##cms.seo.urlid##]"
-    >
-      <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-      <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
-      </face>
-      <face>
-        <meta property="@key" content="@value" />
-      </face>
-    </basis>
-    <basis core="call" file="pwa.inc" />
-    <basis core="call" file="style.inc" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
-    />
-  </head>
-  <body class="overflow-x-hidden bg-secondary-50 cip-landing">
-    <basis core="call" file="header.inc" />
-    <main class="mb-11">
-      <section class="w-full flex relative justify-center mt-20">
-        <img
-          loading="lazy"
-          src="[##cms.cms.cdn##]/images/cip-bg.jpg"
-          alt="cip-bg"
-          class="z-0 absolute object-cover w-full h-full top-0 left-0"
-        />
-        <span
-          class="z-[2] absolute left-0 top-0 w-full h-full linear-gradient1"
-        ></span>
-        <span
-          class="bg-[#0000004D] z-[1] absolute left-0 top-0 w-full h-full"
-        ></span>
-        <div
-          class="px-4 z-20 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5 min-h-[400px] py-10"
-        >
-          <h1 class="text-white text-4xl font-Dbold txt-sh">خدمات CIP</h1>
 
-          <div class="search-box-container w-full">
-            <div
-              id="search-box"
-              class="w-full flex justify-center min-h-[300px] items-center"
-            >
-              <span class="loader"></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+  <title>[##cms.seo.title|( خدمات cip مبین مسافر ملل)##]</title>
+  <meta name="description" content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  مبین مسافر ملل)##]" />
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <basis core="call" file="pwa.inc" />
+  <basis core="call" file="style.inc" />
+  <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body class="overflow-x-hidden bg-secondary-50 cip-landing">
+  <basis core="call" file="header.inc" />
+  <main class="mb-11">
+    <section class="w-full flex relative justify-center mt-20">
+      <img loading="lazy" src="[##cms.cms.cdn##]/images/cip-bg.jpg" alt="cip-bg"
+        class="z-0 absolute object-cover w-full h-full top-0 left-0" />
+      <span class="z-[2] absolute left-0 top-0 w-full h-full linear-gradient1"></span>
+      <span class="bg-[#0000004D] z-[1] absolute left-0 top-0 w-full h-full"></span>
+      <div class="px-4 z-20 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5 min-h-[400px] py-10">
+        <h1 class="text-white text-4xl font-Dbold txt-sh">خدمات CIP</h1>
+
+        <div class="search-box-container w-full">
+          <div id="search-box" class="w-full flex justify-center min-h-[300px] items-center">
+            <span class="loader"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex justify-center w-full my-9 mt-16">
+      <div class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5">
+        <article class="w-full flex items-center gap-[34px]">
+          <div class="w-1/2 flex flex-col gap-2">
+            <basis core="print" datamembername="db.cip-first-content">
+              <face filter="TypeID=150">
+                <h2 class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2">
+                  @text
+                </h2>
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.cip-first-content">
+              <face filter="TypeID=129">
+                <div class="text-secondary-900 font-DMedium line-clamp-4">
+                  @largetext
+                </div>
+              </face>
+            </basis>
+          </div>
+          <div class="w-1/2 h-[320px]">
+            <video class="w-full rounded-lg" height="320" autoplay muted loop
+              poster="[##cms.cms.cdn##]/images/cip-first-image.png">
+              <source src="[##cms.cms.cdn##]/images/cip-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+        <div class="mt-16 w-full flex justify-center items-center flex-col gap-4">
+          <h3 class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2">
+            امکانات و خدمات جایگاه تشریفات اختصاصی (CIP)
+          </h3>
+          <div class="text-secondary-900 font-DMedium line-clamp-4 text-center">
+            جایگاه تشریفات اختصاصی (CIP) فرودگاه امام خمینی، خدماتی مشابه یک
+            ترمینال خصوصی به مسافران ورودی و خروجی این فرودگاه ارائه می‌دهد و
+            کلیه مسافرین محترمی که به دنبال خدمات اختصاصی هستند و تمایل دارند
+            با کمترین استرس و در کمال آرامش مسافرت‌های کاری و شخصی خود را
+            مدیریت کنند، می‌توانند از این خدمات استفاده کنند.
+          </div>
+          <div class="w-full flex Facilities-section mt-8">
+            <aside class="w-[300px] h-[408px] flex flex-col items-center justify-center gap-5">
+              <div class="h-[72px] active flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg">
+                <img src="[##cms.cms.cdn##]/images/amenity1.svg" alt="Exclusive position" />
+                <span class="">جایگاه اختصاصی</span>
+              </div>
+
+              <div class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg">
+                <img src="[##cms.cms.cdn##]/images/amenity2.svg" alt="Airport procedures" />
+                <span class=""> تشریفات فرودگاهی </span>
+              </div>
+
+              <div class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg">
+                <img src="[##cms.cms.cdn##]/images/amenity3.svg" alt="ceremonial hall" />
+                <span class=""> سالن تشریفات </span>
+              </div>
+
+              <div class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg">
+                <img src="[##cms.cms.cdn##]/images/amenity4.svg" alt="CIP+" />
+                <span class=""> CIP+ </span>
+              </div>
+            </aside>
+            <div class="w-[calc(100%-300px)] bg-secondary-100 border border-secondary-200 h-[408px] rounded-lg">
+              <div id="for1" class="w-full grid grid-cols-5 gap-5 active">
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity1.1.png" alt="گیت های اختصاصی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    گیت های اختصاصی
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity1.2.png" alt="سالن تشریفات" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سالن تشریفات
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity1.3.png" alt="سالن انتظار همراهان" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سالن انتظار همراهان
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity1.4.png" alt="سالن پذیرش" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سالن پذیرش
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity1.5.png" alt="پارکینگ شبانه روزی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    پارکینگ شبانه روزی
+                  </p>
+                </article>
+              </div>
+              <div id="for2" class="w-full grid grid-cols-5 gap-5">
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.1.png" alt="کارت پرواز" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    کارت پرواز
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.2.png" alt="چمدان وبار" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    چمدان وبار
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.3.png" alt="اضافه بار" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    اضافه بار
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.4.png" alt="تشریفات گمرکی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    تشریفات گمرکی
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.5.png" alt="خودرو تشریفات" width="88" height="78" />
+                  <p class="font-bold text-center text-secondary-950">
+                    خودرو تشریفات
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity2.6.png" alt="پذیرش ویژه" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    پذیرش ویژه
+                  </p>
+                </article>
+              </div>
+              <div id="for3" class="w-full grid grid-cols-5 gap-5">
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.1.png" alt="لانژ اختصاصی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    لانژ اختصاصی
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.2.png" alt="رستوران سلف سرویس" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    رستوران سلف سرویس
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.3.png" alt="اتاق سیگار" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    اتاق سیگار
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.4.png" alt="فروشگاه" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    فروشگاه
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.5.png" alt="اتاق بازی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    اتاق بازی
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.6.png" alt="اینترنت پرسرعت" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    اینترنت پرسرعت
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.7.png" alt="بانک" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">بانک</p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.8.png" alt="پذیرایی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    پذیرایی
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.9.png" alt="نمازخانه" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    نمازخانه
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity3.10.png" alt="سرویس بهداشتی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سرویس بهداشتی
+                  </p>
+                </article>
+              </div>
+              <div id="for4" class="w-full grid grid-cols-5 gap-5">
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.1.png" alt="حیوان خانگی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    حیوان خانگی
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.2.png" alt="سوئیت" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سوئیت
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.3.png" alt="پارکینگ شبانه روزی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    پارکینگ شبانه روزی
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4..4.png" alt="ویلچر و بالابر" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    ویلچر و بالابر
+                  </p>
+                </article>
+
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.5.png" alt="سالن جلسات" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    سالن جلسات
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.6.png" alt="اتاق ویژه" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    اتاق ویژه
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.7.png" alt="ترنسفر فرودگاهی" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">
+                    ترنسفر فرودگاهی
+                  </p>
+                </article>
+                <article class="flex flex-col justify-center items-center gap-3">
+                  <img src="[##cms.cms.cdn##]/images/amenity4.8.png" alt="ویزا" width="97" height="96" />
+                  <p class="font-bold text-center text-secondary-950">ویزا</p>
+                </article>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="flex justify-center w-full my-9 mt-16">
-        <div
-          class="px-4 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5"
-        >
-          <article class="w-full flex items-center gap-[34px]">
+        <div class="w-full mt-16">
+          <a href="/Advantages-of-cip" class="w-full flex items-center gap-[34px]">
             <div class="w-1/2 flex flex-col gap-2">
-              <basis core="print" datamembername="db.cip-first-content">
-                <face filter="TypeID=150">
-                  <h2
-                    class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2"
-                  >
-                    @text
-                  </h2>
+              <basis core="print" datamembername="db.cip-second-content">
+                <face filter="TypeID=128">
+                  <div class="flex items-center gap-2">
+                    <img src="[##cms.cms.cdn##]/images/Gem - 1 1.svg" alt="  @text" width="64" height="64" />
+                    <h4 class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2">
+                      @text
+                    </h4>
+                  </div>
                 </face>
               </basis>
-              <basis core="print" datamembername="db.cip-first-content">
+              <basis core="print" datamembername="db.cip-second-content">
                 <face filter="TypeID=129">
                   <div class="text-secondary-900 font-DMedium line-clamp-4">
                     @largetext
@@ -125,570 +330,44 @@
               </basis>
             </div>
             <div class="w-1/2 h-[320px]">
-              <video
-                class="w-full rounded-lg"
-                height="320"
-                autoplay
-                muted
-                loop
-                poster="[##cms.cms.cdn##]/images/cip-first-image.png"
-              >
-                <source
-                  src="[##cms.cms.cdn##]/images/cip-video.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              <img src="[##cms.cms.cdn##]/images/cip-second-image.jpg" alt="cip-content"
+                class="w-full h-full object-cover rounded-lg" width="700" height="407" />
             </div>
-          </article>
-          <div
-            class="mt-16 w-full flex justify-center items-center flex-col gap-4"
-          >
-            <h3
-              class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2"
-            >
-              امکانات و خدمات جایگاه تشریفات اختصاصی (CIP)
-            </h3>
-            <div
-              class="text-secondary-900 font-DMedium line-clamp-4 text-center"
-            >
-              جایگاه تشریفات اختصاصی (CIP) فرودگاه امام خمینی، خدماتی مشابه یک
-              ترمینال خصوصی به مسافران ورودی و خروجی این فرودگاه ارائه می‌دهد و
-              کلیه مسافرین محترمی که به دنبال خدمات اختصاصی هستند و تمایل دارند
-              با کمترین استرس و در کمال آرامش مسافرت‌های کاری و شخصی خود را
-              مدیریت کنند، می‌توانند از این خدمات استفاده کنند.
-            </div>
-            <div class="w-full flex Facilities-section mt-8">
-              <aside
-                class="w-[300px] h-[408px] flex flex-col items-center justify-center gap-5"
-              >
-                <div
-                  class="h-[72px] active flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg"
-                >
-                  <img
-                    src="[##cms.cms.cdn##]/images/amenity1.svg"
-                    alt="Exclusive position"
-                  />
-                  <span class="">جایگاه اختصاصی</span>
-                </div>
-
-                <div
-                  class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg"
-                >
-                  <img
-                    src="[##cms.cms.cdn##]/images/amenity2.svg"
-                    alt="Airport procedures"
-                  />
-                  <span class=""> تشریفات فرودگاهی </span>
-                </div>
-
-                <div
-                  class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg"
-                >
-                  <img
-                    src="[##cms.cms.cdn##]/images/amenity3.svg"
-                    alt="ceremonial hall"
-                  />
-                  <span class=""> سالن تشریفات </span>
-                </div>
-
-                <div
-                  class="h-[72px] flex gap-3 items-center element cursor-pointer w-[260px] border-2 rounded-lg"
-                >
-                  <img src="[##cms.cms.cdn##]/images/amenity4.svg" alt="CIP+" />
-                  <span class=""> CIP+ </span>
-                </div>
-              </aside>
-              <div
-                class="w-[calc(100%-300px)] bg-secondary-100 border border-secondary-200 h-[408px] rounded-lg"
-              >
-                <div id="for1" class="w-full grid grid-cols-5 gap-5 active">
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity1.1.png"
-                      alt="گیت های اختصاصی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      گیت های اختصاصی
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity1.2.png"
-                      alt="سالن تشریفات"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سالن تشریفات
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity1.3.png"
-                      alt="سالن انتظار همراهان"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سالن انتظار همراهان
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity1.4.png"
-                      alt="سالن پذیرش"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سالن پذیرش
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity1.5.png"
-                      alt="پارکینگ شبانه روزی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      پارکینگ شبانه روزی
-                    </p>
-                  </article>
-                </div>
-                <div id="for2" class="w-full grid grid-cols-5 gap-5">
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.1.png"
-                      alt="کارت پرواز"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      کارت پرواز
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.2.png"
-                      alt="چمدان وبار"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      چمدان وبار
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.3.png"
-                      alt="اضافه بار"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      اضافه بار
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.4.png"
-                      alt="تشریفات گمرکی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      تشریفات گمرکی
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.5.png"
-                      alt="خودرو تشریفات"
-                      width="88"
-                      height="78"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      خودرو تشریفات
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity2.6.png"
-                      alt="پذیرش ویژه"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      پذیرش ویژه
-                    </p>
-                  </article>
-                </div>
-                <div id="for3" class="w-full grid grid-cols-5 gap-5">
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.1.png"
-                      alt="لانژ اختصاصی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      لانژ اختصاصی
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.2.png"
-                      alt="رستوران سلف سرویس"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      رستوران سلف سرویس
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.3.png"
-                      alt="اتاق سیگار"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      اتاق سیگار
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.4.png"
-                      alt="فروشگاه"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      فروشگاه
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.5.png"
-                      alt="اتاق بازی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      اتاق بازی
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.6.png"
-                      alt="اینترنت پرسرعت"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      اینترنت پرسرعت
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.7.png"
-                      alt="بانک"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">بانک</p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.8.png"
-                      alt="پذیرایی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      پذیرایی
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.9.png"
-                      alt="نمازخانه"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      نمازخانه
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity3.10.png"
-                      alt="سرویس بهداشتی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سرویس بهداشتی
-                    </p>
-                  </article>
-                </div>
-                <div id="for4" class="w-full grid grid-cols-5 gap-5">
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.1.png"
-                      alt="حیوان خانگی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      حیوان خانگی
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.2.png"
-                      alt="سوئیت"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سوئیت
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.3.png"
-                      alt="پارکینگ شبانه روزی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      پارکینگ شبانه روزی
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4..4.png"
-                      alt="ویلچر و بالابر"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      ویلچر و بالابر
-                    </p>
-                  </article>
-
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.5.png"
-                      alt="سالن جلسات"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      سالن جلسات
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.6.png"
-                      alt="اتاق ویژه"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      اتاق ویژه
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.7.png"
-                      alt="ترنسفر فرودگاهی"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">
-                      ترنسفر فرودگاهی
-                    </p>
-                  </article>
-                  <article
-                    class="flex flex-col justify-center items-center gap-3"
-                  >
-                    <img
-                      src="[##cms.cms.cdn##]/images/amenity4.8.png"
-                      alt="ویزا"
-                      width="97"
-                      height="96"
-                    />
-                    <p class="font-bold text-center text-secondary-950">ویزا</p>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full mt-16">
-            <a
-              href="/Advantages-of-cip"
-              class="w-full flex items-center gap-[34px]"
-            >
-              <div class="w-1/2 flex flex-col gap-2">
-                <basis core="print" datamembername="db.cip-second-content">
-                  <face filter="TypeID=128">
-                    <div class="flex items-center gap-2">
-                      <img
-                        src="[##cms.cms.cdn##]/images/Gem - 1 1.svg"
-                        alt="  @text"
-                        width="64"
-                        height="64"
-                      />
-                      <h4
-                        class="text-3xl pb-2 text-secondary-900 font-DSemiBold line-clamp-2"
-                      >
-                        @text
-                      </h4>
-                    </div>
-                  </face>
-                </basis>
-                <basis core="print" datamembername="db.cip-second-content">
-                  <face filter="TypeID=129">
-                    <div class="text-secondary-900 font-DMedium line-clamp-4">
-                      @largetext
-                    </div>
-                  </face>
-                </basis>
-              </div>
-              <div class="w-1/2 h-[320px]">
-                <img
-                  src="[##cms.cms.cdn##]/images/cip-second-image.jpg"
-                  alt="cip-content"
-                  class="w-full h-full object-cover rounded-lg"
-                  width="700"
-                  height="407"
-                />
-              </div>
-            </a>
-          </div>
-
-          <basis core="print" datamembername="db.faq">
-            
-            <layout>
-              <div
-                class="mt-16 common-qs flex flex-col divide-y w-full divide-secondary-100 border border-secondary-100 rounded-xl"
-              >
-                @child
-              </div>
-            </layout>
-            <face filter="TypeID=250">
-              <div class="box cursor-pointer py-3 px-4 flex flex-col gap-2">
-                <div class="flex items-center gap-2">
-                  <span
-                    class="w-4 h-4 relative flex justify-center items-center"
-                    ><svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.3335 8H12.7616M8.04754 3.28595V12.714"
-                        stroke="#110D06"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <p class="qst text-secondary-950 font-DMedium pb-2">@text</p>
-                </div>
-                <div id="answer" class="text-secondary-900 hidden text-sm">
-                  <ul class="w-full pr-5 flex list-disc flex-col gap-2">
-                    <li class="text-secondary-900 text-sm">@largetext</li>
-                  </ul>
-                </div>
-              </div>
-            </face>
-          </basis>
+          </a>
         </div>
-      </section>
-    </main>
-    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
-    <basis core="call" file="footer.inc" />
-  </body>
+
+        <basis core="print" datamembername="db.faq">
+
+          <layout>
+            <div
+              class="mt-16 common-qs flex flex-col divide-y w-full divide-secondary-100 border border-secondary-100 rounded-xl">
+              @child
+            </div>
+          </layout>
+          <face filter="TypeID=250">
+            <div class="box cursor-pointer py-3 px-4 flex flex-col gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 relative flex justify-center items-center"><svg width="16" height="16"
+                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.3335 8H12.7616M8.04754 3.28595V12.714" stroke="#110D06" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <p class="qst text-secondary-950 font-DMedium pb-2">@text</p>
+              </div>
+              <div id="answer" class="text-secondary-900 hidden text-sm">
+                <ul class="w-full pr-5 flex list-disc flex-col gap-2">
+                  <li class="text-secondary-900 text-sm">@largetext</li>
+                </ul>
+              </div>
+            </div>
+          </face>
+        </basis>
+      </div>
+    </section>
+  </main>
+  <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+  <basis core="call" file="footer.inc" />
+</body>
+
 </html>
