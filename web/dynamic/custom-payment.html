@@ -24,18 +24,19 @@
 
 <body class="overflow-x-hidden bg-secondary-50">
     <basis core="call" file="header.inc" />
-    <main class="flex justify-center w-full mt-20 mb-11">
-        <div class="px-4 z-20 w-full lg:px-4 xl:!w-[1280px] xl:!px-0 flex flex-col gap-5">
-            <h1 class="text-2xl font-semibold Iran-sans mt-4">پرداخت اینترنتی
+    <main class="flex justify-center w-full mt-24 mb-11">
+        <div class="px-4 z-20 w-full lg:px-4 xl:!w-[1024px] xl:!px-0 flex gap-5 justify-between">
+            <div class="flex flex-col gap-2 w-472">
+                <h1 class="text-xl font-DSemiBold pb-[11px]"> درگاه امن پرداخت  
             </h1>
             <div class="payment-container payment__container w-full">
                 <div class=" w-full">
-                    <div class="payment-content p-6 relative bg-secondary-100 border border-secondary-200   rounded-lg">
-                        <div class="flex justify-between payment-title pb-8 mb-8">
+                    <div class="payment-content relative">
+                        <div class="flex justify-between payment-title  mb-8">
 
                             <div class="flex flex-col gap-3 w-full">
-                                <div class="text-xl mb-2">درگاه امن پرداخت</div>
-                                <div class="text-sm">از این درگاه میتوانید مبالغی را که کارشناسان فروش ما به شما اعلام
+                              
+                                <div class="text-base text-secondary-900">از این درگاه میتوانید مبالغی را که کارشناسان فروش ما به شما اعلام
                                     کرده
                                     اند را پرداخت
                                     نمایید </div>
@@ -82,9 +83,18 @@
                                                               <input type="hidden" name="captchaid" value="@captcha@" />
                                                             </div>
                                                             <div data-bc-part="" class="refresh" data-bc-part-related-cell="">
-                                                                <svg width="40" height="40" onclick="renderCaptchaCode(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokewidth="{1.5}" stroke="currentColor" class="inline-block cursor-pointer mt-1 ml-1 mr-1">
-                                                                    <path strokelinecap="round" strokelinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3"></path>
-                                                                </svg>
+                                                                <span class='cursor-pointer'  onclick="renderCaptchaCode(this)">
+                                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 8C0 3.58172 3.58172 0 8 0H32C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8Z" fill="#F6F0E5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.1664 22.832C20.4592 23.1249 20.4592 23.5998 20.1663 23.8927L18.0608 25.998L20.1663 28.1029C20.4592 28.3957 20.4593 28.8706 20.1664 29.1636C19.8736 29.4565 19.3987 29.4566 19.1057 29.1637L16.4698 26.5285C16.3291 26.3878 16.25 26.1971 16.25 25.9981C16.25 25.7992 16.329 25.6084 16.4697 25.4677L19.1057 22.832C19.3986 22.5391 19.8735 22.5391 20.1664 22.832Z" fill="#0C0A09"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.8348 10.8331C20.1276 10.5401 20.6025 10.54 20.8955 10.8329L23.5315 13.4679C23.6722 13.6085 23.7512 13.7993 23.7512 13.9982C23.7513 14.1972 23.6722 14.3879 23.5316 14.5286L20.8956 17.1646C20.6027 17.4575 20.1278 17.4575 19.8349 17.1646C19.542 16.8717 19.542 16.3968 19.8349 16.104L21.9405 13.9984L19.835 11.8937C19.5421 11.6009 19.542 11.126 19.8348 10.8331Z" fill="#0C0A09"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 20C10.25 16.2729 13.2717 13.25 17 13.25H23C23.4142 13.25 23.75 13.5858 23.75 14C23.75 14.4142 23.4142 14.75 23 14.75H17C14.1003 14.75 11.75 17.1011 11.75 20C11.75 21.6713 12.533 23.1574 13.7545 24.1212C14.0797 24.3777 14.1354 24.8493 13.8788 25.1745C13.6222 25.4997 13.1507 25.5554 12.8255 25.2988C11.261 24.0646 10.25 22.1527 10.25 20Z" fill="#0C0A09"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26.1212 14.8246C26.3777 14.4994 26.8493 14.4437 27.1745 14.7003C28.739 15.9345 29.75 17.8464 29.75 19.9991C29.75 23.7273 26.7282 26.7491 23 26.7491H17C16.5858 26.7491 16.25 26.4123 16.25 25.9981C16.25 25.5839 16.5858 25.2491 17 25.2491H23C25.8998 25.2491 28.25 22.8989 28.25 19.9991C28.25 18.3278 27.467 16.8417 26.2455 15.8779C25.9203 15.6214 25.8646 15.1497 26.1212 14.8246Z" fill="#0C0A09"/>
+</svg>
+
+                                                                </span>
+                                                                
+                                                               
                                                               <img class="inline-block rounded-xl" src="/@captcha@" width="80"  />
                                                             </div>
                                                           </div>
@@ -104,14 +114,14 @@
                                 <button
                                     class="text-sm  text-white text-center data-bc-btn rounded-lg cursor-pointer bg-primary px-3 pb-2"
                                     type="button" data-btn-submit>
-                                    ارسال
+                                    پرداخت
                                 </button>
                             </div>
                             <basis core="callback" run="atclient" method="submitPayment" triggers="edit.data"></basis>
                             <div class="message__api text-center"></div>
                         </div>
                         <div class="hidden mb-5 loading__api w-full" id="ballsWaveG">
-                            <div class="w-full flex justify-center"><span class="loader"></span></div>
+                            <div class="w-full flex justify-center mt-4"><span class="loader"></span></div>
 
                         </div>
                         <basis core="callback" run="atclient" method="submitPayment" triggers="edit.data"></basis>
@@ -120,6 +130,12 @@
 
 
                 </div>
+            </div>
+            </div>
+            <div class="h-633 w-512 payment-img-container rounded-xl flex flex-col justify-center items-center gap-5">
+                <img src="[##cms.cms.cdn##]/images/payment-img.png	" alt="payment"  width="440"
+                height="219">
+                <h2 class="Iran-sans font-semibold text-secondary-900">پرداخت در فضایی امن و حفاظت شده</h2>
             </div>
         </div>
     </main>

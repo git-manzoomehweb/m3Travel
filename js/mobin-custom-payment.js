@@ -146,7 +146,7 @@ const check_invoice = (element, type) => {
                               document
                                 .querySelector(".payment__content")
                                 .querySelector(".desc")
-                                .querySelector("input").value
+                                .querySelector("textarea").value
                             }' name="desc"/>
                         </form>`
       );

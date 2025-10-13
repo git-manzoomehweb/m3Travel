@@ -1,0 +1,109 @@
+<basis core="external.fly.ws" procedurename="dbsource" source="cmsDbService2" name="db">
+    <member name="get_unit_currency" method="cms" query='{
+        "name": "db",
+        "mid": "20",
+        "member": [
+            {
+                "type": "list",
+                "request": "get_unit_currency",
+                "dmnid": "[##cms.cms.domainid##]",
+                "name": "q",
+                "lid": "1"
+               
+            }
+        ]
+    }'/>
+</basis>
+<basis core="external.fly.ws" source="cmsDbService2" name="db" procedurename="dbsource">
+    <member method="cms" name="webservice_list" query='
+    { 
+        "name": "db",
+        "mid": "20",
+        "member":
+        [
+            { 
+                "name": "q", 
+                "type":"list",
+                "request": "webservice_list",
+                "dmnid":"[##cms.cms.domainid##]",
+                "type": "5",
+                "lid": "1"
+            }
+        ] 
+    } ' />
+</basis>
+<basis core="group" name="Delay_1">
+    <basis core="inlinesource" name="db">
+        <member name="webservice_list-Tree" format="json"
+            postsql="select  Id , ParentId , case when trim(Field) is null  then  (select field from [db.webservice_list-Tree] where id = a.parentid ) else field end as field, value , type , path  from [db.webservice_list-Tree] as a"
+            >{"root":[##db.webservice_list.result##]}</member>
+        <member name="bankid" format="json" postsql="select Value from [db.bankid] where field = 'id'" >
+            {"root":[##db.webservice_list.result##]}</member>
+        <member name='unit_id' format="json"  postsql="select value from [db.unit_id] where field = 'id'">
+            {"root": [##db.get_unit_currency.result##]}
+        </member>
+    </basis>
+    <basis core="group" name="check-bank" if="'[##db.bankid.RowNumber##]' > '1'">
+        <basis core="tree" datamembername="db.webservice_list-Tree" idcol="id" parentidcol="parentid" nullvalue="null">
+            <face filter="field in ('bank') and type in ('Object')">
+                <div class="invoice-content" data-clicked="0" onclick="check_invoice(this,'bankInvoice')">
+                    <ul class="flex items-center">
+                        
+                        <ul class="flex justify-between items-center">
+                            @child
+                        </ul>
+                        <li><button type="button" class="btn-item next-btn">تایید و پرداخت</button></li>
+                    </ul>
+                </div>
+            </face>
+            <face filter="field = 'logo'">
+                <li><img src="/@value" alt="banklogo" width="65" height="65"/></li>
+            </face>
+            <face filter="field = 'persianName'">
+                <li class="flex flex-col">
+                     <p class="bank-name"> @value</p>
+                  <span class="">  پرداخت از درگاه بانک</span>
+                </li>
+            </face>
+            <face filter="field = 'moneytype'">
+                <li><span class="firstpay-price">[##cms.form.firstpay##]</span><span class="unit-content">@value</span></li>
+            </face>
+            <face filter="field = 'id'">
+                <input type="hidden" value="@value" class="bankwid">
+            </face>
+            <face filter="type in ('object','array')">@child</face>
+        </basis>
+    </basis>
+    <basis core="group" name="check-bank" if="'[##db.bankid.RowNumber##]' <= '1'">
+        <basis core="group" name="check-bankid" if="'[##db.bankid.Value##]' = '-1'">
+            <div class="invoice-content preInvoice" data-clicked="0" onclick="check_invoice(this,'preInvoice')">جهت ثبت پیش قرارداد کلیک کنید</div>
+        </basis>
+        <basis core="group" name="check-bankid" if="'[##db.bankid.Value##]' <> '-1'">
+            <basis core="tree" datamembername="db.webservice_list-Tree" idcol="id" parentidcol="parentid" nullvalue="null">
+                <face filter="field in ('bank') and type in ('Object')">
+                    <div class="invoice-content" data-clicked="0" onclick="check_invoice(this,'bankInvoice')">
+                        <ul class="flex-justify">
+                            <li>پرداخت از درگاه بانک</li>
+                            @child
+                            <li>
+                            <button type="button" class="btn-item next-btn">تایید و پرداخت</button></li>
+                        </ul>
+                    </div>
+                </face>
+                <face filter="field = 'logo'">
+                    <li><img src="/@value" alt="banklogo" width="65" height="65"/></li>
+                </face>
+                <face filter="field = 'persianName'">
+                    <li>@value</li>
+                </face>
+                <face filter="field = 'moneytype'">
+                    <li><span class="firstpay-price">[##cms.form.firstpay##]</span><span class="unit-content">@value</span></li>
+                </face>
+                <face filter="field = 'id'">
+                    <input type="hidden" value="@value" class="bankwid">
+                </face>
+                <face filter="type in ('object','array')">@child</face>
+            </basis>
+        </basis>
+    </basis>
+</basis>
