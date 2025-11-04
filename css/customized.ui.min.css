@@ -1136,3 +1136,274 @@ header div.hidden.pb-\[9px\] a.font-DMedium.px-3:hover {
   margin-top: 0 !important;
   margin-bottom: 40px !important;
 }
+
+.layout__body__container {
+  margin-top: 120px;
+}
+.layout__body__container * {
+  font-family: DiodrumArabic-Medium !important;
+}
+
+.payment__container input {
+  background-color: #ffff !important;
+  border: 1px solid var(--secondary-200) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  color: var(--secondary-700) !important;
+  box-shadow: none !important;
+  height: 40px !important;
+}
+.payment__container textarea {
+  background-color: #ffff !important;
+  border: 1px solid var(--secondary-200) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  color: var(--secondary-700) !important;
+  box-shadow: none !important;
+  height: 80px !important;
+  resize: none !important;
+}
+.payment__container [data-bc-question] {
+  display: flex;
+  flex-direction: column !important;
+  position: relative;
+  margin: 0 !important;
+}
+.payment__container [data-bc-part][data-bc-invalid] [data-bc-validation-part] {
+  display: block;
+  /* padding-right: 10px; */
+  list-style: none;
+  margin: 5px 0;
+  color: #b40020;
+  font-size: 12px;
+  position: absolute !important;
+  bottom: -22px !important;
+}
+.payment__container
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part]
+  * {
+  font-size: 12px !important;
+}
+.payment__container input:focus,
+.payment__container textarea:focus {
+  border: 1px solid var(--primary-800) !important;
+}
+.payment__container .unit {
+  width: 45px !important;
+}
+.payment__container [data-bc-answer-title-container] {
+  display: none !important;
+}
+.payment__container .price {
+  width: calc(100% - 70px) !important;
+}
+.w-472 {
+  width: 472px;
+}
+.payment__container [data-bc-question] {
+  display: flex !important;
+}
+.payment__container [data-bc-answer-container],
+.payment__container [data-bc-part-container] {
+  width: 100% !important;
+}
+.payment__container .data-bc-btn {
+  width: 100% !important;
+  padding-top: 5px !important;
+  padding-bottom: 10px !important;
+  margin-top: 15px !important;
+}
+@font-face {
+  font-family: Iran-sans;
+  font-weight: 200;
+  font-style: normal;
+  src: url("../fonts/IRANSansWeb\(FaNum\).ttf");
+}
+.payment__container [data-bc-question-title] {
+  font-family: Iran-sans !important;
+  font-size: 14px !important;
+}
+.payment__container .refresh span:hover svg path:first-child {
+  fill: var(--primary-200) !important;
+}
+.payment__container .data-bc-btn:hover {
+  background-color: var(--secondary-700) !important;
+}
+@media not all and (min-width: 900px) {
+  .payment__container [data-bc-question] {
+    flex-direction: column !important;
+  }
+
+  .payment__container li:has(.btn-item) {
+    width: 100% !important;
+  }
+  .payment-img-container {
+    padding: 32px !important;
+  }
+  .payment__container .flex-justify {
+    min-height: 122px !important;
+  }
+  .payment__container .flex-justify li:has(img) {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+  }
+  .payment__container .flex-justify li:first-child {
+    position: absolute !important;
+    right: 89px !important;
+    top: 40px !important;
+  }
+  .payment__container .flex-justify li:nth-child(4) {
+    position: absolute !important;
+    right: 89px !important;
+    top: 7px !important;
+    font-family: DiodrumArabic-Semibold !important;
+  }
+  .firstpay-price {
+    color: #040d13 !important;
+    font-family: DiodrumArabic-Semibold !important;
+    font-size: 16px;
+  }
+  li:has(.firstpay-price) {
+    position: absolute !important;
+    right: 8px !important;
+    bottom: 8px !important;
+  }
+  .unit-content {
+    font-size: 14px;
+    color: #14405b !important;
+  }
+  .payment__container .btn-item {
+    position: absolute !important;
+    left: 8px !important;
+    bottom: 8px !important;
+  }
+}
+.w-372 {
+  width: 372px;
+}
+.h-328 {
+  height: 328px;
+}
+.payment__container .invoice-content {
+  background: transparent;
+  border-radius: 1rem;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+}
+.payment__container .flex-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100) !important;
+  padding: 0.7em;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.payment__container .btn-item {
+  padding: 0.25rem;
+  padding-bottom: 8px !important;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+.h-633 {
+  height: 633px;
+}
+.w-512 {
+  width: 512px;
+}
+.payment-img-container {
+  background: linear-gradient(
+    250.88deg,
+    #f6f0e5 0%,
+    #f1e6d3 15.39%,
+    #e5d1b0 68.78%,
+    #d4b37c 100.05%
+  );
+}
+.mt-24 {
+  margin-top: 6rem;
+}
+.payment__container .captcha-flex [data-bc-part]:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: 7px !important;
+}
+@media (min-width: 1200px) {
+  .payment__container .captcha-flex [data-bc-part]:nth-child(2) {
+    width: 38% !important;
+  }
+  .xl\:\!w-\[1024px\] {
+    width: 1024px !important;
+  }
+  .payment__container .invoice-content {
+    width: 1024px !important;
+  }
+  .payment-layout {
+    display: flex;
+    flex-direction: row !important;
+  }
+  .payment__container .flex-justify li:first-child {
+    position: absolute;
+    bottom: 15px !important;
+    right: 89px !important;
+    color: #1d5d85 !important;
+  }
+  .firstpay-price {
+    color: #040d13 !important;
+    font-family: DiodrumArabic-Semibold !important;
+    font-size: 16px;
+  }
+  .payment__container .flex-justify li:has(img) {
+    position: absolute;
+    right: 8px;
+  }
+  .unit-content {
+    font-size: 14px;
+    color: #14405b !important;
+  }
+  .payment__container .flex-justify li:nth-child(4) {
+    position: absolute;
+    right: 89px;
+    top: 10px;
+    font-family: DiodrumArabic-Semibold !important;
+  }
+  .payment__container .flex-justify {
+    min-height: 75px !important;
+  }
+  .payment-another-elements {
+    width: 512px !important;
+    height: 636px !important;
+  }
+  .payment-layout {
+    display: flex;
+    flex-direction: row !important;
+    gap: 40px !important;
+    justify-content: space-between;
+  }
+}
+.payment__content {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.payment-another-elements::after {
+  content: "";
+  background-image: url("../images/card-payment-img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  display: block !important;
+}
