@@ -967,7 +967,6 @@ svg {
 }
 .Basis_Calendar_Box.fa-calendar,
 .Iran-sans,
-.bg-payment-form [data-bc-question-title],
 .fa-calendar,
 .fa-calendar * {
   font-family: Iran-sans !important;
@@ -2893,3 +2892,8 @@ body.tour .tour-bg {
 /* .payment__container  .captcha.w-full {
       transform: translateY(-10px);
 } */
+
+section.flex.mt-20,
+section.mt-\[72px\].flex {
+  margin-top: 0 !important;
+}
