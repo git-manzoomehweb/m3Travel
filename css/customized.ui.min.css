@@ -1315,7 +1315,7 @@ header div.hidden.pb-\[9px\] a.font-DMedium.px-3:hover {
 .payment__container .flex-justify {
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: end !important;
   gap: 10px;
   align-items: center;
   background: var(--primary-50);
@@ -1358,7 +1358,13 @@ header div.hidden.pb-\[9px\] a.font-DMedium.px-3:hover {
   gap: 7px;
   margin-right: 7px !important;
 }
+#captchaContainer .payment__content .refresh {
+  width: calc(30% - 10px) !important;
+}
 @media (min-width: 1200px) {
+  .payment__content {
+    width: 630px !important;
+  }
   .payment__container {
     margin-top: 40px !important;
   }
@@ -1369,7 +1375,7 @@ header div.hidden.pb-\[9px\] a.font-DMedium.px-3:hover {
     width: 1024px !important;
   }
   .payment__container .invoice-content {
-    width: 1024px !important;
+    width: 120% !important;
   }
   .payment-layout {
     display: flex;
@@ -1440,6 +1446,9 @@ body.book-bg-specialcolor-1 {
 
 body.book-rtl input {
   line-height: 1;
+}
+.payment__content {
+  overflow: unset !important;
 }
 #picker
   .book-select-none
