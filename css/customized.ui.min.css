@@ -1207,8 +1207,8 @@ header div.hidden.pb-\[9px\] a.font-DMedium.px-3:hover {
 .payment__container [data-bc-answer-title-container] {
   display: none !important;
 }
-.payment__container .price {
-  width: calc(100% - 70px) !important;
+.payment__container #custom-payment-form .price {
+  width: calc(100% - 80px) !important;
 }
 .w-472 {
   width: 472px;
